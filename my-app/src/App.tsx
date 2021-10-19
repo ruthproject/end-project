@@ -1,59 +1,39 @@
-import React, { useEffect, useState } from 'react';
-// import DB from "./components/jsons/DB.json"
-// import Schema from "./components/jsons/Schema.json"
-import DisplayTable from './components/DisplayTable/DisplayTable';
-import Api from './Api';
-//import Projects from './components/Projects/Projects';
-import Project from './components/Project/Project';
+
+import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router-dom'
+import SignIn from './components/Assistant/SignIn'
+
+import End from './components/Assistant/end'
+// import AllProjectAss from './components/Assistant/AllProjectAss';
+import store from './redux/store';
+import { useState } from 'react';
+import AllProjectAss from './components/Assistant/AllProjectAss';
+import Header from './components/Assistant/header';
 import EditDetails from './components/EditDetails/EditDetails';
+import Project from './components/Project/Project';
 
 
 function App() {
-
-  const [assistantsDB, setAssistantsDB] = useState([]);
-  // [
-  //     {
-  //         "AssistantId": 1,
-  //         "UserId": null,
-  //         "Status": true
-  //     },
-  //     {
-  //         "AssistantId": 2,
-  //         "UserId": null,
-  //         "Status": false
-  //     }
-  // ]
-
-
-  const getAssistants = async () => {
-     try{
-      setAssistantsDB(await Api({ url: 'Users' }))
-
-    }
-    catch (error) {
-      throw error;
-    }
-  }
-
-  useEffect(() => {
-    getAssistants();
-    console.log('its good!!!!!!!!!!!!!!!');
-  }, [])
-
-
+  const [begin,setBegin]=useState(null)
+  const {userPermmison}={userPermmison:"rdux"}
   return (
     <div>
-      <div>
-        <div>
-          <DisplayTable headers={assistantsDB[0]? Object.keys(assistantsDB[0]):null} rows={assistantsDB} />
-          <br/>
-          {/* <Projects/> */}
-          {/* //todo take fom table  */}
-          <Project projectId={11}/>
-          <EditDetails />
-      </div>
-      </div>
-      </div>
+         <Provider store={store}>
+           
+        {userPermmison==="manager"?<Header begin={begin}/>:<Header begin={begin}/>} 
+        <Switch>
+        
+          <Route path='/all-projects' component={()=><AllProjectAss  />} />
+          <Route path='/Project' component={()=><Project setBegin={setBegin}/>} />
+          <Route path='/Project/:id' component={()=><Project setBegin={setBegin}  />} />
+          <Route path='/' component={SignIn} />
+       
+                   
+        </Switch>
+      </Provider>
+     
+    </div>
+    
   );
 }
 

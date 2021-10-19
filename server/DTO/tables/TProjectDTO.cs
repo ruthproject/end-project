@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace DTO.tables
 {
-    class TProjectDTO
+    public class TProjectDTO
     {
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
+        public Nullable<int> IdProfession { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public Nullable<int> IdBeforeProject { get; set; }
     }
 }

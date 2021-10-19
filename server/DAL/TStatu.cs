@@ -14,16 +14,7 @@ namespace DAL
     
     public partial class TStatu
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TStatu()
-        {
-            this.TAssistantHours = new HashSet<TAssistantHour>();
-        }
-    
         public int StatusId { get; set; }
         public string StatusName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TAssistantHour> TAssistantHours { get; set; }
     }
 }

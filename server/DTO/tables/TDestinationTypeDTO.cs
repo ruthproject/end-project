@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO.tables
 {
-    class TDestinationTypeDTO
+   public class TDestinationTypeDTO
     {
         public int DestinationTypeId { get; set; }
         public string DestinationTypeName { get; set; }
         public Nullable<int> ProfessionId { get; set; }
+
+        public  ICollection<TDestinationGroupDTO> TDestinationGroupsDTO { get; set; }
+        public  TProfessionDTO TProfessionDTO { get; set; }
     }
 }

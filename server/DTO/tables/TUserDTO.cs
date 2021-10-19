@@ -17,6 +17,8 @@ namespace DTO.tables
         public string NumbarPhone { get; set; }
         public string Mail { get; set; }
 
-        
+        //public  ICollection<TAssistantDTO> TAssistants { get; set; }
+       // public TPermissionDTO TPermission { get; set; }
+       // public  ICollection<TStudentDTO> TStudent { get; set; }
     }
 }

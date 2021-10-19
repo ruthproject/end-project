@@ -1,16 +1,21 @@
-import * as React from 'react';
+//  import * as React from 'react';
 
-const Api = ({url='', method = "GET", body = {} }) => {
+import { Modal } from "@material-ui/core";
+import { LanguageServiceMode } from "typescript";
+
+const Api = ({ url = '', method = "GET",body = {}}) => {
     let options = {
         method,
-        headers: { "Content-Type": "application/json"
-           },
-        body: method !== "GET" ? JSON.stringify(body) : null,
+        // mode:'no-cors',
+        headers: { "Content-Type": "application/json" },
+        body: method.substr(0,3) !== "GET" ? JSON.stringify(body) : null,
     }
-
-    return fetch('https://localhost:44348/api/'+url,options)
-    .then((response) => response.json());
-        
+    console.log(url);
+        return fetch('https://localhost:44348/api/' + url,options)
+        .then((response) => response.json())
+        // .catch(error => console.error('Error:', error));
 }
+
+
 
 export default Api;

@@ -7,17 +7,17 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+
 namespace API.Controllers
 {
-
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins:"*",headers:"*",methods:"*")]
     public class AssistantsController : ApiController
     {
         // GET api/Assistants
-
-   
+        
         public IEnumerable<TAssistantDTO> Get()
         {
+            
             return new AssistantBL().GetAll();
         }
 
@@ -26,22 +26,20 @@ namespace API.Controllers
         {
             return new AssistantBL().GetAssistantById(id);
         }
-
-        ////////////////////////////////////////////////////////////////
-        //
+        
         //POST api/values
         public void Post([FromBody] TAssistantDTO value)
         {
             new AssistantBL().Post(value);
         }
 
-        //// PUT api/Assistant
+        // PUT api/Assistant
         public void Put(int id, [FromBody] TAssistantDTO value)
         {
             new AssistantBL().Put(id,value);
         }
 
-        //// DELETE api/Assistant
+        // DELETE api/Assistant
         public void Delete(int id)
         {
             new AssistantBL().Delete(id);

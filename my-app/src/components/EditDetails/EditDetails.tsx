@@ -1,4 +1,4 @@
-import React , {useState}from 'react';
+import React , {useState , useContext}from 'react';
 import {
   Box,
   Button,
@@ -10,6 +10,9 @@ import {
   TextField
 } from '@material-ui/core';
 import { useEffect } from 'react';
+import Api from '../../Api';
+import { ManagmentProjectsContext } from '../Assistant/Provider';
+// import { ManagmentProjectsContext } from '../Provider';
 
 const states = [
   {
@@ -27,37 +30,71 @@ const states = [
 ];
 
 const EditDetails = (props : any) => {
-    const [values, setValues] = useState<any>();
-    useEffect(()=>{
-//todo take login user id from redux 
-// and call api with this id to get all  data 
-//setValues(result)
-// only meam time: 
-setValues({
-    firstName: 'Katarina',
-    lastName: 'Smith',
-    email: 'demo@devias.io',
-    phone: '',
-    state: 'Alabama',
-    country: 'USA'
-  });
+  const [assistantsHoursDB, setAssistantsHoursDB] = useState([]);
+  const {state, dispatch} = useContext(ManagmentProjectsContext);
+  
+  const [userDB, setUserDB] = useState<any>({});
+ 
 
-    }, [])  
+  // this code should be move to login comp 
+  useEffect(()=>{
+    //todo 1 move to login 
+    const user= {
+      UserId:6,
+      UserName:"dddd",
+      UserPermissionId:1,
+      UserPassword:"fff",
+      FirstName: 'Katarina',
+      LastName: 'Smith',
+      NumberPhone: '0545456',
+      Mail: 'demo@devias.io',
+     }
+
+    //dispatch({type: "SET_USER", payload : user });
+    // end todo 1
+    //todo 2 delete ths line  after code move to login 
+    if(state.user.id== '7'){
+      setUserDB(user);
+    }
+    // end todo 2
+    else {setUserDB(state.user)};
+  
+  }, []) ; 
 
   const handleChange = (event: any) => {
-    setValues({
-      ...values,
+    setUserDB({
+      ...userDB,
       [event.target.name]: event.target.value
     });
   };
 
+  const setUser = async () => {
+    //     const user ={ 
+    //   UserId:6,
+    //   // UserName:"dddd",
+    //   // UserPermissionId:1,
+    //   UserPassword:"fff",
+    //   FirstName: 'כהן',
+    //   LastName: 'יעל',
+    //   NumbarPhone: '12121',
+    //   Mail: 'demo@devias.io',
+    //  }
+    try{
+      setUserDB(await Api({ url: 'Users',method:"Put",body:userDB}))
+   }
+   catch (error) {
+     throw error;
+   }
+  }
   const onSubmit = ()=>{
-      console.log(values);
 
+    setUser();
+    dispatch({type: "SET_USER", payload : userDB });
+      
   }
 
   return (
-      <div>{values &&
+  
     <form
     onSubmit={onSubmit}
       autoComplete="off"
@@ -69,6 +106,7 @@ setValues({
           subheader="The information can be edited"
           title="Profile"
         />
+        {state.user.id}
         <Divider />
         <CardContent>
           <Grid
@@ -84,10 +122,10 @@ setValues({
                 fullWidth
                 helperText="Please specify the first name"
                 label="First name"
-                name="firstName"
+                name="FirstName"
                 onChange={handleChange}
                 required
-                value={values.firstName}
+                value={userDB.FirstName}
                 variant="outlined"
               />
             </Grid>
@@ -99,10 +137,10 @@ setValues({
               <TextField
                 fullWidth
                 label="Last name"
-                name="lastName"
+                name="LastName"
                 onChange={handleChange}
                 required
-                value={values.lastName}
+                value={userDB.LastName}
                 variant="outlined"
               />
             </Grid>
@@ -114,10 +152,10 @@ setValues({
               <TextField
                 fullWidth
                 label="Email Address"
-                name="email"
+                name="Mail"
                 onChange={handleChange}
                 required
-                value={values.email}
+                value={userDB.Mail}
                 variant="outlined"
               />
             </Grid>
@@ -129,54 +167,16 @@ setValues({
               <TextField
                 fullWidth
                 label="Phone Number"
-                name="phone"
+                name="NumberPhone"
                 onChange={handleChange}
                 type="number"
-                value={values.phone}
+                value={userDB.NumberPhone}
                 variant="outlined"
               />
             </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Country"
-                name="country"
-                onChange={handleChange}
-                required
-                value={values.country}
-                variant="outlined"
-              />
-            </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Select State"
-                name="state"
-                onChange={handleChange}
-                required
-                select
-                SelectProps={{ native: true }}
-                value={values.state}
-                variant="outlined"
-              >
-                {states.map((option) => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                  >
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
-            </Grid>
+            
+           
+            
           </Grid>
         </CardContent>
         <Divider />
@@ -188,16 +188,17 @@ setValues({
         //   }}
         >
           <Button
+          onClick={onSubmit}
             color="primary"
             variant="contained"
-            type="submit"
+            type="button"
           >
             Save details
           </Button>
         </Box>
       </Card>
-    </form>}
-    </div>
+    </form>
+  
   );
 };
 

@@ -12,9 +12,9 @@ namespace DTO.tables
         public Nullable<int> AssistantId { get; set; }
         public Nullable<System.DateTime> BeginningTime { get; set; }
         public Nullable<System.DateTime> EndTime { get; set; }
-        public string NotesToManagement { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
-
+        public string WathToDo { get; set; }
+        public Nullable<int> ProjectId { get; set; }
+        public Nullable<int> finishChores { get; set; }
 
     }
 }

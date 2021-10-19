@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO.tables
 {
-    class TStatusDTO
+ public   class TStatusDTO
     {
         public int StatusId { get; set; }
         public string StatusName { get; set; }
