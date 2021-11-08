@@ -15,12 +15,12 @@ import Project from './components/Project/Project';
 
 function App() {
   const [begin,setBegin]=useState(null)
-  const {userPermmison}={userPermmison:"rdux"}
+  // const {userPermmison}={userPermmison:"rdux"}
   return (
     <div>
          <Provider store={store}>
            
-        {userPermmison==="manager"?<Header begin={begin}/>:<Header begin={begin}/>} 
+        {/* {userPermmison==="manager"?<Header begin={begin}/>:<Header begin={begin}/>}  */}
         <Switch>
         
           <Route path='/all-projects' component={()=><AllProjectAss  />} />
@@ -31,7 +31,7 @@ function App() {
                    
         </Switch>
       </Provider>
-     
+     <p>bjhgvjh</p>
     </div>
     
   );
