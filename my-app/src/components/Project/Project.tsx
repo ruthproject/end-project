@@ -8,6 +8,7 @@ import AddNote from '../AddNote/AddNote';
 import Begin from '../Assistant/begin'
 import End from '../Assistant/end'
 import { connect } from "react-redux";
+import begin from '../Assistant/begin';
 
 // const classes = useStyles();
 
@@ -135,6 +136,7 @@ const id = 1;
        <button onClick={() => end(item['ProjectId'])}>סיום הנחיה</button>
      */}
       <AddNote />
+      
       <Begin id={props.currentProjectId} setBegin={props.setBegin} />
       <End id={props.currentProjectId} setBegin={props.setBegin} />
       {/* <DisplayTable headers={remarks[0]? Object.keys(remarks[0]):null}  rows={remarks} /> */}

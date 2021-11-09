@@ -6,7 +6,8 @@ import { fetchStudent, setCurrentStudent } from '../../redux/actions/student.act
 import { useEffect } from 'react';
 import Moment from 'react-moment';
 import moment from 'moment';
-
+import { Link } from 'react-router-dom';
+import { TextField } from '@mui/material';
 
 const SignIn = (props: {
         users: {}, assistants: {}, students: {},
@@ -28,7 +29,7 @@ const SignIn = (props: {
             if (current.UserPermissionId === 1) {
                 const isStudent: any = Object.values(props.students).find((student: any) => student.IdUser === current.UserId)
                 if (isStudent) {
-                    props.setCurrentAss(isStudent.StudentId)
+                    props.setCurrentStudent(isStudent.StudentId)
                     url = '/student'
                 }
                 else
@@ -57,9 +58,11 @@ const SignIn = (props: {
 
     return (
         <div>
-            <input type="text " name="userName" onChange={updateLogin} value={login.userName} placeholder="userName" /><br />
-            <input type="password " name="password" onChange={updateLogin} value={login.password} placeholder="password" /><br />
-            <input type="submit" name="enter" onClick={submitLogin} />
+             
+            <TextField required type="text" name="userName" onChange={updateLogin} value={login.userName} placeholder="userName" /><br /><br />
+            <TextField required type="password" name="password" onChange={updateLogin} value={login.password} placeholder="password" /><br /><br />
+            <TextField required type="submit" name="enter" onClick={submitLogin} /><br />
+            <Link to="/sign-up"> משתמש חדש לחץ כאן</Link>
         </div>
     )
 }

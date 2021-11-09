@@ -5,23 +5,23 @@ import { useState } from 'react';
 export default function HelpLogin(initial :any, submit: () => void) {
 
 
-    const [login, SetLogin] = useState(initial);
+    const [form, SetForm] = useState(initial);
 
-    const updateLogin = (event: any) => {
-        SetLogin({
-            ...login,
+    const updateForm = (event: any) => {
+        SetForm({
+            ...form,
             [event.target.name]: event.target.value
         });
     }
 
-    const submitLogin = (event: any) => {
+    const submitForm = (event: any) => {
         submit();
         // return false;
     }
 
     return [
-        updateLogin,
-        submitLogin,
-        login
+        updateForm,
+        submitForm,
+        form
     ]
 }

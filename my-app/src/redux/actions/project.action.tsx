@@ -30,9 +30,9 @@ export function fetchProjectByAss(assId:number) {
     }
 }
 
-export const setCurrentProject = (projectId: Number) => {
-    return {
-        type: SET_CURRENT,
-        payload: projectId
+export const setCurrentProject=(projectId:number)=>{
+    return{
+        type:SET_CURRENT,
+        payload:projectId
     }
 }

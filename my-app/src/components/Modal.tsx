@@ -18,7 +18,7 @@ const style = {
 
 export default function BasicModal({open, setOpen}:{open:boolean,setOpen:any}) {
   const handleClose = () => setOpen(false);
-
+console.log(open)
   return (
     <div>
       

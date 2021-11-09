@@ -1,4 +1,4 @@
-import {Table,Paper,TableBody,TableCell,TableRow,TableContainer,TableHead,Link} from "@material-ui/core";
+import { Table, Paper, TableBody, TableCell, TableRow, TableContainer, TableHead, Link } from "@material-ui/core";
 import React, { useCallback } from "react";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
@@ -16,42 +16,42 @@ import { ProjectsProvider } from "./Provider";
 
 const AllProjectAss = (props: { currenAssistant: any, currentProjectId: number, students: {}, fetchStudent: any, setCurrentProject: any, setStartHour: any }) => {
 
-    
+
 
     const history = useHistory();
     const [projectByAss, SetProjectByAss]: any = useState([])
     const [trueFalse, setTrueFalse]: any = useState(false)
-    
+
     const project_ByAss = async () => {
-        SetProjectByAss(await Api({ url: `AssistantInProject/GetProjectToAss?id=${props.currenAssistant.AssistantId}` }))
+        props.currenAssistant && SetProjectByAss(await Api({ url: `AssistantInProject/GetProjectToAss?id=${props.currenAssistant.AssistantId}` }))
     }
     useEffect(() => {
         // console.log(props.currenAssistant)
-        console.log("projectid",props.currentProjectId)
+        console.log("projectid", props.currentProjectId)
         project_ByAss();
         props.fetchStudent();
     }, [])
-    
 
-   
 
-  
-   const projectdetails= (id:number) =>{
-    //    console.log(id)
-    props.setCurrentProject(id);
-  
+
+
+
+    const projectdetails = (id: number) => {
+        //    console.log(id)
+        props.setCurrentProject(id);
+
         // history.push(`/Project/?id=${id}`);
         history.push('/Project');
-        };
+    };
     return (
 
         <div>
-             <Paper >
+            <Paper >
                 <TableContainer >
                     <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>
-                            {
+                                {
                                     <TableCell>{'פרויקט'}</TableCell>
                                 }
                                 {
@@ -60,7 +60,7 @@ const AllProjectAss = (props: { currenAssistant: any, currentProjectId: number, 
                                 {
                                     <TableCell></TableCell>
                                 }
-                           
+
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -68,7 +68,7 @@ const AllProjectAss = (props: { currenAssistant: any, currentProjectId: number, 
                                 console.log(item['ProjectId'])
                                 console.log(i)
                                 return (
-                                    
+
                                     <TableRow hover role="checkbox" tabIndex={-1} key={i}>
                                         <button onClick={() => projectdetails(item['ProjectId'])}>
                                             {
@@ -77,7 +77,7 @@ const AllProjectAss = (props: { currenAssistant: any, currentProjectId: number, 
                                             {
                                                 <TableCell >{item['Status'] == true ? 'מאושר' : 'לא'}</TableCell>
                                             }
-                                          
+
                                         </button>
                                     </TableRow>
                                 );
@@ -85,14 +85,14 @@ const AllProjectAss = (props: { currenAssistant: any, currentProjectId: number, 
                         </TableBody>
                     </Table>
                 </TableContainer>
-                
-            </Paper> 
-           
-          
-            <ProjectsProvider>
+
+            </Paper>
+
+
+            {/* <ProjectsProvider>
           <EditDetails /> 
-          </ProjectsProvider>
-         
+          </ProjectsProvider> */}
+
         </div>
     )
 }
