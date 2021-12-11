@@ -1,5 +1,6 @@
 import React from "react";
 // import gmailApi from "react-api";
+//@ts-ignore
 import gmailApi from 'react-gmail'
  
 export default class New extends React.Component {
@@ -8,7 +9,7 @@ export default class New extends React.Component {
   };
  
   getMessages = () => {
-    gmailApi.getMessages(true, 5,"AIzaSyD1OG_0ToNSNLxzBjMKBElXl6WzxDL1WqM").then(res => {
+    gmailApi.getMessages(true, 5,"AIzaSyD1OG_0ToNSNLxzBjMKBElXl6WzxDL1WqM").then((res: any) => {
       this.setState({ messages: (res) });
     });
   };

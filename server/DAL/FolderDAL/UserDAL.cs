@@ -20,7 +20,7 @@ namespace DAL
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
 
-                    return pm.TUsers.ToList();
+                    return pm.TUser.ToList();
                 }
             }
             catch
@@ -36,7 +36,7 @@ namespace DAL
             {
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
-                    return pm.TUsers.Single(s => s.UserId == id);
+                    return pm.TUser.Single(s => s.UserId == id);
                 }
             }
             catch (Exception)
@@ -52,8 +52,8 @@ namespace DAL
             {
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
-                    var ass = pm.TUsers.Where(s => s.UserId == id);
-                    pm.TUsers.RemoveRange(ass);
+                    var ass = pm.TUser.Where(s => s.UserId == id);
+                    pm.TUser.RemoveRange(ass);
                     pm.SaveChanges();
                 }
             }
@@ -71,9 +71,9 @@ namespace DAL
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
                     //מחקנו והוספנו לסוף  ולא למקום)(כמו שרצינו
-                    var ass = pm.TUsers.Where(assi => assi.UserId == id);
-                    pm.TUsers.RemoveRange(ass);
-                    pm.TUsers.Add(user);
+                    var ass = pm.TUser.Where(assi => assi.UserId == id);
+                    pm.TUser.RemoveRange(ass);
+                    pm.TUser.Add(user);
                     pm.SaveChanges();
                 }
             }
@@ -90,7 +90,7 @@ namespace DAL
             {
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
-                    pm.TUsers.Add(user);
+                    pm.TUser.Add(user);
                     pm.SaveChanges();
                 }
             }

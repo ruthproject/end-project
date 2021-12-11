@@ -20,7 +20,7 @@ namespace DAL
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
 
-                    return pm.TStudents.ToList();
+                    return pm.TStudent.ToList();
                 }
             }
             catch

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import HelpLogin from '../index.login';
 import { connect } from 'react-redux';
 import { fetchUser, setCurrentUser } from '../redux/actions/user.action'
@@ -8,8 +8,10 @@ import { useEffect } from 'react';
 import Moment from 'react-moment';
 import moment from 'moment';
 import Api from "../Api";
-import { TextField } from "@material-ui/core";
+import { Radio, TextField } from "@material-ui/core";
 import { Console } from "console";
+import { method } from "lodash";
+// import SuiDropzone from "components/SuiDropzone";
 // const User = {
 //     UserId: login.,
 //     UserName: string,
@@ -21,13 +23,13 @@ import { Console } from "console";
 //     Mail: string
 
 // }
+
 const SignUp = (props: {
     users: {}, assistants: {}, students: {},
     fetchUser: any, fetchAssistant: any, fetchStudent: any, setCurrentAss: any, setCurrentStudent: any, setCurrentUser: any,
     history: any
 }) => {
-
-
+    const file = useRef<any>({})
     // const [newUser, setNewUser] = useState<User>({} as User);
 
     const submit = () => {
@@ -41,14 +43,14 @@ const SignUp = (props: {
 
         }
 
-        if(login.UserPassword!=login.varifyPassword){
+        if (login.UserPassword != login.varifyPassword) {
             alert("אימות הסיסמא אינו תואם");
         }
     }
-    
+
     const [updateLogin, submitLogin, login] = HelpLogin(
         {
-            UserId: '',
+
             varifyPassword: '',
             UserName: '',
             UserPermissionId: '',
@@ -60,31 +62,42 @@ const SignUp = (props: {
         }
         , submit
     )
+
     const newUser = {
         UserId: login.UserId,
         UserName: login.UserName,
-        UserPermissionId:login.UserPermissionId ,
-        UserPassword:login.UserPassword,
-        FirstName:login.FirstName,
-        LastName:login.LastName,
-        NumbarPhone:login.NumbarPhone,
-        Mail:login.Mail
+        UserPermissionId: login.UserPermissionId == 'manager' ? 3 : login.UserPermissionId == 'ass' ? 2 : login.UserPermissionId == 'student' ? 1 : null,
+        UserPassword: login.UserPassword,
+        FirstName: login.FirstName,
+        LastName: login.LastName,
+        NumbarPhone: login.NumbarPhone,
+        Mail: login.Mail
     }
     const addUser = async () => {
-
         const response = await Api({ url: 'Users', method: "Post", body: newUser });
 
     }
+    // const [upLoadFile, setUpLoadFile] = useState(null)
+    // const uploadFile = async () => {
 
-    // const handleChange = (event: any) => {
-    //           //@ts-ignore
-    //     setNewUser({
-    //         ...newUser,
-    //         [event.target.name]: event.target.value
-    //     });
-    //     console.log(event.target.value);
-    // };
+    //     const formdata = new FormData();
+    //     const file: any = upLoadFile;
+    //     if (upLoadFile) {
+    //         formdata.append('file', file)
+    //     }
 
+    //     const requestOptions = {
+    //         method: 'POST',
+    //         body: formdata,
+    //     };
+    //     await fetch("https://localhost:44348/api/Files/UploadFile", requestOptions)
+    //         .then(response => console.log(response.text()))
+    //         .then(result => console.log(result))
+    //         .catch(error => console.log('error', error))
+    // }
+    // useEffect(() => {
+    //     if (upLoadFile) uploadFile();
+    // }, [upLoadFile])
     return (
         <div>
             <TextField
@@ -160,12 +173,42 @@ const SignUp = (props: {
                 required
                 value={login.varifyPassword}
                 variant="outlined"
-            // type="email"
             />
             <br />
-            {/* <input type="password " name="password" onChange={updateLogin} value={login.password} placeholder="password" /><br /> */}
-            <input type="submit" name="enter" onClick={submitLogin} />
 
+{/* 
+            <label>ass</label>
+            <Radio
+                checked={login.UserPermissionId === 'ass'}
+                onChange={updateLogin}
+                value="ass"
+                name="UserPermissionId"
+                inputProps={{ 'aria-label': 'ass' }}
+            /><br />
+            <label>manager</label>
+
+            <Radio
+                checked={login.UserPermissionId === "manager"}
+                onChange={updateLogin}
+                value="manager"
+                name="UserPermissionId"
+                inputProps={{ 'aria-label': "manager" }}
+            /><br />
+            <label>student</label>
+            <Radio
+                checked={login.UserPermissionId === "student"}
+                onChange={updateLogin}
+                value="student"
+                name="UserPermissionId"
+                inputProps={{ 'aria-label': "student" }}
+            /><br />
+            {login.UserPermissionId === 'ass' &&
+                <form name='form'>
+                    <input name='f' ref={file} type='file' onChange={(e: any) => setUpLoadFile(e.target.files[e.target.files.length - 1])} />
+
+                </form>}
+            <input type="submit" name="enter" onClick={submitLogin} />
+            <button onClick={() => Api({ url: 'Mails/SendMail' ,method:'POST'})}>mail</button> */}
         </div>
     )
 }
@@ -181,3 +224,5 @@ export default connect(
         fetchUser, fetchAssistant, fetchStudent, setCurrentUser, setCurrentStudent, setCurrentAss
     }
 )(SignUp);
+
+

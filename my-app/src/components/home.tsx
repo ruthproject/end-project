@@ -15,9 +15,9 @@ export default function Example(props:{history:any}) {
     <AppBar position="static">
       <Tabs value={tabValue} onChange={handleSetTabValue}>
         <Tab label="SignIn" onClick={()=>props.history.push('/sign-in')}/>
-        <Tab label="SignUp" onClick={()=>props.history.push('/sign-up')}/>
+        <Tab label="SignUp" onClick={()=>props.history.push('/warp-sign-up')}/>
       </Tabs>
-    </AppBar>
+        </AppBar>
   );
 }
    

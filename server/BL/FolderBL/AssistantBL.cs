@@ -29,9 +29,25 @@ namespace BL
             return (TAssistantDTO)conv.convert(new AssistantDAL().GetAssistant(id));
         }
 
-   
+        public IEnumerable<ass_by_manager_ResultDTO> GetAssistantByManger(int id)
+        {
+            var list = new AssistantDAL().GetAssistantByManager(id);
+            foreach (var ass in list)
+            {
+                yield return (ass_by_manager_ResultDTO)conv.convert(ass);
+            }
+          
+        }
 
+        public IEnumerable<ruyhyDTO> GetAssistantByManger1(int id)
+        {
+            var list = new AssistantDAL().GetAssistantByManager1(id);
+            foreach (var ass in list)
+            {
+                yield return (ruyhyDTO)conv.convert(ass);
+            }
 
+        }
 
         public void Post(TAssistantDTO value)
         {

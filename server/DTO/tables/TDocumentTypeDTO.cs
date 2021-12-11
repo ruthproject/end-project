@@ -10,6 +10,8 @@ namespace DTO.tables
     {
         public int DocumentTypeId { get; set; }
         public string DocumentTypeName { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
+
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<TDocumentDTO> TDocument { get; set; }
     }
 }

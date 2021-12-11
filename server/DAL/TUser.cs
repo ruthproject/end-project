@@ -17,8 +17,8 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TUser()
         {
-            this.TAssistants = new HashSet<TAssistant>();
-            this.TStudents = new HashSet<TStudent>();
+            this.TAssistant = new HashSet<TAssistant>();
+            this.TStudent = new HashSet<TStudent>();
         }
     
         public int UserId { get; set; }
@@ -29,11 +29,12 @@ namespace DAL
         public string LastName { get; set; }
         public string NumbarPhone { get; set; }
         public string Mail { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TAssistant> TAssistants { get; set; }
+        public virtual ICollection<TAssistant> TAssistant { get; set; }
         public virtual TPermission TPermission { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TStudent> TStudents { get; set; }
+        public virtual ICollection<TStudent> TStudent { get; set; }
     }
 }

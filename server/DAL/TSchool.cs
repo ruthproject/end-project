@@ -17,19 +17,22 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TSchool()
         {
-            this.TGrades = new HashSet<TGrade>();
-            this.TMessages = new HashSet<TMessage>();
-            this.TStudents = new HashSet<TStudent>();
+            this.TAssToManager = new HashSet<TAssToManager>();
+            this.TGrade = new HashSet<TGrade>();
+            this.TMessage = new HashSet<TMessage>();
+            this.TStudent = new HashSet<TStudent>();
         }
     
         public int SchoolId { get; set; }
         public string SchoolName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TGrade> TGrades { get; set; }
+        public virtual ICollection<TAssToManager> TAssToManager { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TMessage> TMessages { get; set; }
+        public virtual ICollection<TGrade> TGrade { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TStudent> TStudents { get; set; }
+        public virtual ICollection<TMessage> TMessage { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TStudent> TStudent { get; set; }
     }
 }

@@ -8,12 +8,22 @@ namespace DTO.tables
 {
   public  class TAssistantDTO
     {
+
         public int AssistantId { get; set; }
         public Nullable<int> UserId { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
-        public  TUserDTO TUserDTO { get; set; }
-        public  ICollection<TAssistantHoursDTO> TAssistantHoursDTO { get; set; }
-        public  ICollection<TAssistantToProjectDTO> TAssistantToProjectsDTO { get; set; }
+        public Nullable<int> AssToManagerId { get; set; }
+
+
+
+
+        //public virtual TAssToManager TAssToManager { get; set; }
+        //public virtual TUser TUser { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<TAssistantHours> TAssistantHours { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<TAssistantToProject> TAssistantToProject { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<TTechnologyToAss> TTechnologyToAss { get; set; }
+
     }
 }

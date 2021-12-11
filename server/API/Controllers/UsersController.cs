@@ -19,14 +19,41 @@ namespace API.Controllers
 
         public IEnumerable<TUserDTO> Get()
         {
+            var list = new UserBL().GetAll();
+            foreach (var u in list)
+            {
+                u.UserName = null;
+                u.UserPassword = null;
+            }
 
-            return new UserBL().GetAll();
+            return list;
         }
 
         // GET api/User
         public TUserDTO Get(int id)
         {
             return new UserBL().GetUserById(id);
+        }
+        [HttpPost]
+        public IHttpActionResult Login(TUserDTO user)
+        {
+            var list = new UserBL().GetAll();
+            foreach (var u in list)
+            {
+                if (u.UserName == user.UserName)
+                {
+
+                    if (u.UserPassword == user.UserPassword)
+                    {
+                        u.UserName = null;
+                        u.UserPassword = null;
+                        return Ok(u);
+                    }
+                        
+                    return Conflict();
+                }
+            }
+            return NotFound();
         }
 
         ///////////////////////////////////////////////////////////

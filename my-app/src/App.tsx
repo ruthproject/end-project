@@ -11,29 +11,36 @@ import AllProjectAss from './components/Assistant/AllProjectAss';
 import Header from './components/Assistant/header-ass';
 import EditDetails from './components/EditDetails/EditDetails';
 import Project from './components/Project/Project';
-import Email from './components/email';
+// import Email from './components/email';
 import Home from './components/home';
 import SignUp from './components/SignUp';
-import gmailApi from "react-gmail"
+// import gmailApi from "react-gmail"
 import New from './new';
 import Try from './components/try';
 import userEvent from '@testing-library/user-event';
 import Headers from './components/headers/headers'
 import Details from './components/EditDetails/EditDetails'
-import Files from './components/Files';
+import AllAss from './components/AllAss/allAss'
+import WarpSignUp from './components/WarpSignUp/WarpSignUp';
+
+import Ex from './components/ex'
+import SignUpStudents from './components/Sign-up-studens/Sign-up-students';
+
 function App() {
   const [begin, setBegin] = useState(null)
   // const {userPermmison}={userPermmison:"rdux"}
 
+  const showHeader = () => {
+    const currentPath = window.location.pathname
+    return !currentPath.includes('sign') || currentPath === "/"
+  }
   return (
-    <div>
-      {/* <input onClick={()=>{gmailApi.getProfile("111133183261998252620").then(res=>console.log(res)) }}/> */}
-
+    <div style={{direction:'rtl'}}>
       <Provider store={store}>
-        <Headers begin={begin}/>
-        {/* {props.userPermission === 2 ? <Header begin={begin} /> : null} */}
+        {console.log(window.location.pathname)}
+        { <Headers begin={begin} />}
+        {/* {showHeader() && <Headers begin={begin} />} */}
         <Switch>
-
           <Route path='/all-projects' component={() => <AllProjectAss />} />
           <Route path='/details' component={Details} />
           <Route path='/Project' component={() => <Project setBegin={setBegin} />} />
@@ -41,17 +48,13 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/sign-up' component={SignUp} />
           <Route path='/sign-in' component={SignIn} />
+          <Route path='/all-ass' component={AllAss} />
+          <Route path='/warp-sign-up' component={WarpSignUp} />
+          <Route path='/sign-up-students' component={SignUpStudents} />
+
         </Switch>
       </Provider>
-      <Files></Files>
-      {/* <Email></Email> */}
-
-      {/* <New></New> */}
-      {/* <Try currenAssistant={2}></Try> */}
-      <p>try to make change</p>
-      
-      <h1>fgggggggggggggggd</h1>
-      <h1></h1>
+     {/* <Ex/> */}
     </div>
 
   );

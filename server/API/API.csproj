@@ -172,10 +172,12 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AssistantHoursController.cs" />
     <Compile Include="Controllers\AssistantInProjectController.cs" />
+    <Compile Include="Controllers\MailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AssistantsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -238,7 +240,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="uploads\" />
     <Folder Include="Views\AssistantHours\" />
+    <Folder Include="Views\Mails\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -275,6 +279,10 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{4542e6a8-422c-41fe-90b5-deecb7a213c5}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{E0F32F61-06D9-4337-AFA5-902F8EC7F206}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{9e0cd6fe-f770-4995-ab68-20d5e7df396a}</Project>

@@ -16,5 +16,6 @@ namespace DTO.tables
         public Nullable<int> ProjectId { get; set; }
         public Nullable<int> finishChores { get; set; }
 
+      //  public virtual TAssistantDTO TAssistant { get; set; }
     }
 }

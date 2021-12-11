@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4a4/bdV3fQGhDMTAlczDd0ZG/tuEaPBB9KlP/lXHcAD7Ry/vKkoPy52v4pzdiwaATQGbOHovqIi3SIPVNiWs/w==",
+  "dgSpecHash": "bw0DECshdabotT8eUOEvvACFBj3t88afJ9Ua/qYhnvGPjEbd7Uk9PHVfRgosutMgUm9ZjoB68DZu1h9WkmoomA==",
   "success": true,
-  "projectFilePath": "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DAL\\DAL.csproj",
+  "projectFilePath": "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user1\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512"
   ],

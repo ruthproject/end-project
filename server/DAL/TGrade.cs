@@ -17,9 +17,9 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TGrade()
         {
-            this.TDestinationGroups = new HashSet<TDestinationGroup>();
-            this.TMessages = new HashSet<TMessage>();
-            this.TStudents = new HashSet<TStudent>();
+            this.TDestinationGroup = new HashSet<TDestinationGroup>();
+            this.TMessage = new HashSet<TMessage>();
+            this.TStudent = new HashSet<TStudent>();
         }
     
         public int GradeId { get; set; }
@@ -27,11 +27,11 @@ namespace DAL
         public Nullable<int> GradeIdSchool { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TDestinationGroup> TDestinationGroups { get; set; }
+        public virtual ICollection<TDestinationGroup> TDestinationGroup { get; set; }
         public virtual TSchool TSchool { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TMessage> TMessages { get; set; }
+        public virtual ICollection<TMessage> TMessage { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TStudent> TStudents { get; set; }
+        public virtual ICollection<TStudent> TStudent { get; set; }
     }
 }

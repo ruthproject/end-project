@@ -19,22 +19,15 @@ const style = {
 };
 
 export default function BasicModal({ open, setOpen, currentAssistantId, startHour, currentProjectId }: { open: boolean, setOpen: any, currentAssistantId: number, startHour: any, currentProjectId: number }) {
-  const submit = () => {
+  const submit = async () => {
     if (valuePercentage.percentage > 0) {
-
       const body = { AssistantId: currentAssistantId, BeginningTime: startHour, EndTime: new Date(), ProjectId: currentProjectId, finishPercentage: valuePercentage.percentage }
-      console.log(body);
-      hour(body);
-
+      await Api({ url: 'AssistantHours', method: 'POST', body: body })
     }
     else
       alert(' לא הכנסת ערך')
   }
-
-  const hour = async (body = {}) => {
-    await Api({ url: `AssistantHour?id=${currentAssistantId}`, method: 'POST', body: body })
-  }
-
+  
   const [updatePercentage, submitEnd, valuePercentage] = HelpLogin(
     {
       percentage: 0

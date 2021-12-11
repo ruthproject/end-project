@@ -10,9 +10,8 @@ namespace DTO.tables
     {
         public int DestinationTypeId { get; set; }
         public string DestinationTypeName { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
 
-        public  ICollection<TDestinationGroupDTO> TDestinationGroupsDTO { get; set; }
-        public  TProfessionDTO TProfessionDTO { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<TDestinationGroupDTO> TDestinationGroup { get; set; }
     }
 }

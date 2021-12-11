@@ -17,11 +17,9 @@ namespace DAL
         public int MessageId { get; set; }
         public Nullable<int> IdSchool { get; set; }
         public Nullable<int> IdGrade { get; set; }
-        public Nullable<int> IdProfession { get; set; }
         public Nullable<bool> StudentsOrAssistants { get; set; }
     
         public virtual TGrade TGrade { get; set; }
-        public virtual TProfession TProfession { get; set; }
         public virtual TSchool TSchool { get; set; }
     }
 }

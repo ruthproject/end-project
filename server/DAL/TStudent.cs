@@ -23,11 +23,8 @@ namespace DAL
         public Nullable<int> GradeId { get; set; }
         public Nullable<int> FinalMark { get; set; }
         public Nullable<int> IdSchool { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
-        public Nullable<bool> Status { get; set; }
     
         public virtual TGrade TGrade { get; set; }
-        public virtual TProject TProject { get; set; }
         public virtual TSchool TSchool { get; set; }
         public virtual TUser TUser { get; set; }
     }

@@ -19,7 +19,7 @@ namespace DAL
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
 
-                    return pm.TProjects.ToList();
+                    return pm.TProject.ToList();
                 }
             }
             catch
@@ -35,7 +35,7 @@ namespace DAL
             {
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
-                    return pm.TProjects.Single(s => s.ProjectId == id);
+                    return pm.TProject.Single(s => s.ProjectId == id);
                 }
             }
             catch (Exception)
@@ -91,8 +91,8 @@ namespace DAL
             {
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
-                    var ass = pm.TProjects.Where(s => s.ProjectId == id);
-                    pm.TProjects.RemoveRange(ass);
+                    var ass = pm.TProject.Where(s => s.ProjectId == id);
+                    pm.TProject.RemoveRange(ass);
                     pm.SaveChanges();
                 }
             }
@@ -110,9 +110,9 @@ namespace DAL
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
                     //מחקנו והוספנו לסוף  ולא למקום)(כמו שרצינו
-                    var ass = pm.TProjects.Where(assi => assi.ProjectId == id);
-                    pm.TProjects.RemoveRange(ass);
-                    pm.TProjects.Add(project);
+                    var ass = pm.TProject.Where(assi => assi.ProjectId == id);
+                    pm.TProject.RemoveRange(ass);
+                    pm.TProject.Add(project);
                     pm.SaveChanges();
                 }
             }
@@ -129,7 +129,7 @@ namespace DAL
             {
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
-                    pm.TProjects.Add(project);
+                    pm.TProject.Add(project);
                     pm.SaveChanges();
                 }
             }

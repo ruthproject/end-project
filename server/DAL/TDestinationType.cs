@@ -17,15 +17,13 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TDestinationType()
         {
-            this.TDestinationGroups = new HashSet<TDestinationGroup>();
+            this.TDestinationGroup = new HashSet<TDestinationGroup>();
         }
     
         public int DestinationTypeId { get; set; }
         public string DestinationTypeName { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TDestinationGroup> TDestinationGroups { get; set; }
-        public virtual TProfession TProfession { get; set; }
+        public virtual ICollection<TDestinationGroup> TDestinationGroup { get; set; }
     }
 }

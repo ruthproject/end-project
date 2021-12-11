@@ -12,7 +12,7 @@ namespace DTO.tables
         public Nullable<int> IdAssistant { get; set; }
         public Nullable<int> IdProject { get; set; }
 
-        public  TAssistantDTO TAssistantDTO { get; set; }
-       //public  TProjectDTO TProjectDTO { get; set; }
+        //public virtual TAssistantDTO TAssistant { get; set; }
+        //public virtual TProjectDTO TProject { get; set; }
     }
 }

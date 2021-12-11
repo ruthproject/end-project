@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DAL.FolderDAL;
 using DTO.tables;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,7 @@ namespace BL
                 TAssistantDTO assistantDTO = new TAssistantDTO();
                 assistantDTO.AssistantId = ((TAssistant)entity).AssistantId;
                 assistantDTO.UserId = ((TAssistant)entity).UserId;
-                assistantDTO.Status = ((TAssistant)entity).Status;
-                assistantDTO.ProfessionId = ((TAssistant)entity).ProfessionId;
+                assistantDTO.AssToManagerId = ((TAssistant)entity).AssToManagerId;
                 //assistantDTO.TUserDTO = (TUserDTO)convert(((TAssistant)entity).TUser);
                 //assistantDTO.TAssistantHoursDTO = (ICollection<TAssistantHoursDTO>)convert(((TAssistant)entity).TAssistantHours);
                 //assistantDTO.TAssistantToProjectsDTO = (ICollection<TAssistantToProjectDTO>)convert(((TAssistant)entity).TAssistantToProjects);
@@ -31,8 +31,7 @@ namespace BL
                 TAssistant assistantDAL = new TAssistant();
                 assistantDAL.AssistantId = ((TAssistantDTO)entity).AssistantId;
                 assistantDAL.UserId = ((TAssistantDTO)entity).UserId;
-                assistantDAL.Status = ((TAssistantDTO)entity).Status;
-                assistantDAL.ProfessionId = ((TAssistantDTO)entity).ProfessionId;
+                assistantDAL.AssToManagerId = ((TAssistantDTO)entity).AssToManagerId;
                 //assistantDAL.TUser = (TUser)convert(((TAssistantDTO)entity).TUserDTO);
                 //assistantDAL.TAssistantHours = (ICollection<TAssistantHour>)convert(((TAssistantDTO)entity).TAssistantHoursDTO);
                 //assistantDAL.TAssistantToProjects = (ICollection<TAssistantToProject>)convert(((TAssistantDTO)entity).TAssistantToProjectsDTO);
@@ -49,6 +48,7 @@ namespace BL
                 userDTO.LastName = ((TUser)entity).LastName;
                 userDTO.Mail = ((TUser)entity).Mail;
                 userDTO.NumbarPhone = ((TUser)entity).NumbarPhone;
+                userDTO.Status = ((TUser)entity).Status;
                 return userDTO;
             }
             else if (getType.Equals("DTO.tables.TUserDTO"))
@@ -62,25 +62,26 @@ namespace BL
                 useDAL.LastName = ((TUserDTO)entity).LastName;
                 useDAL.Mail = ((TUserDTO)entity).Mail;
                 useDAL.NumbarPhone = ((TUserDTO)entity).NumbarPhone;
+                useDAL.Status = ((TUserDTO)entity).Status;
                 return useDAL;
             }
             else if (getType.Contains("TAssistantHour_"))
             {
                 TAssistantHoursDTO assistantHourDTO = new TAssistantHoursDTO();
-                assistantHourDTO.AssistantHoursId = ((TAssistantHour)entity).AssistantHoursId;
-                assistantHourDTO.AssistantId = ((TAssistantHour)entity).AssistantId;
-                assistantHourDTO.BeginningTime = ((TAssistantHour)entity).BeginningTime;
-                assistantHourDTO.EndTime = ((TAssistantHour)entity).EndTime;
-                assistantHourDTO.WathToDo = ((TAssistantHour)entity).WathToDo;
-                assistantHourDTO.ProjectId = ((TAssistantHour)entity).ProjectId;
-                assistantHourDTO.finishChores = ((TAssistantHour)entity).finishChores;
+                assistantHourDTO.AssistantHoursId = ((TAssistantHours)entity).AssistantHoursId;
+                assistantHourDTO.AssistantId = ((TAssistantHours)entity).AssistantId;
+                assistantHourDTO.BeginningTime = ((TAssistantHours)entity).BeginningTime;
+                assistantHourDTO.EndTime = ((TAssistantHours)entity).EndTime;
+                assistantHourDTO.WathToDo = ((TAssistantHours)entity).WathToDo;
+                assistantHourDTO.ProjectId = ((TAssistantHours)entity).ProjectId;
+                assistantHourDTO.finishChores = ((TAssistantHours)entity).finishChores;
                 //assistantHourDTO.TAssistantDTO = (TAssistantDTO)convert(((TAssistantHour)entity).TAssistant);
                 //assistantHourDTO.TStatusDTO = (TStatusDTO)convert(((TAssistantHour)entity).TStatu);
                 return assistantHourDTO;
             }
             else if (getType.Equals("DTO.tables.TAssistantHoursDTO"))
             {
-                TAssistantHour assistantHoursDAL = new TAssistantHour();
+                TAssistantHours assistantHoursDAL = new TAssistantHours();
                 assistantHoursDAL.AssistantHoursId = ((TAssistantHoursDTO)entity).AssistantHoursId;
                 assistantHoursDAL.AssistantId = ((TAssistantHoursDTO)entity).AssistantId;
                 assistantHoursDAL.BeginningTime = ((TAssistantHoursDTO)entity).BeginningTime;
@@ -103,7 +104,7 @@ namespace BL
                 //destinationGroupDTO.TGradeDTO = (TGradeDTO)convert(((TDestinationGroup)entity).TGrade);
                 return destinationGroupDTO;
             }
-            else if (getType.Contains("DTO.tables.TDestinationGroupDTO"))
+            else if (getType.Equals("DTO.tables.TDestinationGroupDTO"))
             {
                 TDestinationGroup destinationGroupDAL = new TDestinationGroup();
                 destinationGroupDAL.DestinationId = ((TDestinationGroupDTO)entity).DestinationId;
@@ -119,17 +120,15 @@ namespace BL
                 TDestinationTypeDTO destinationTypeDTO = new TDestinationTypeDTO();
                 destinationTypeDTO.DestinationTypeId = ((TDestinationType)entity).DestinationTypeId;
                 destinationTypeDTO.DestinationTypeName = ((TDestinationType)entity).DestinationTypeName;
-                destinationTypeDTO.ProfessionId = ((TDestinationType)entity).ProfessionId;
                 // destinationTypeDTO.TDestinationGroupsDTO = ((TDestinationType)entity).TDestinationGroups;
                 //destinationTypeDTO.TProfessionDTO = (TProfessionDTO)convert(((TDestinationType)entity).TProfession);
                 return destinationTypeDTO;
             }
-            else if (getType.Contains("DTO.tables.TDestinationTypeDTO"))
+            else if (getType.Equals("DTO.tables.TDestinationTypeDTO"))
             {
                 TDestinationType destinationTypeDAL = new TDestinationType();
                 destinationTypeDAL.DestinationTypeId = ((TDestinationTypeDTO)entity).DestinationTypeId;
                 destinationTypeDAL.DestinationTypeName = ((TDestinationTypeDTO)entity).DestinationTypeName;
-                destinationTypeDAL.ProfessionId = ((TDestinationTypeDTO)entity).ProfessionId;
                 // destinationTypeDAL.TDestinationGroups = ((TDestinationTypeDTO)entity).TDestinationGroupsDTO;
                 //destinationTypeDAL.TProfession = (TProfession)convert(((TDestinationTypeDTO)entity).TProfessionDTO);
                 return destinationTypeDAL;
@@ -139,19 +138,23 @@ namespace BL
                 TProjectDTO projectDTO = new TProjectDTO();
                 projectDTO.ProjectId = ((TProject)entity).ProjectId;
                 projectDTO.ProjectName = ((TProject)entity).ProjectName;
-                projectDTO.IdProfession = ((TProject)entity).IdProfession;
                 projectDTO.Status = ((TProject)entity).Status;
                 projectDTO.IdBeforeProject = ((TProject)entity).IdBeforeProject;
+                projectDTO.IdStatus = ((TProject)entity).IdStatus;
+                projectDTO.ClientSide = ((TProject)entity).ClientSide;
+                projectDTO.ServerSide = ((TProject)entity).ServerSide;
                 return projectDTO;
             }
-            else if (getType.Contains("DTO.tables.TProjectDTO"))
+            else if (getType.Equals("DTO.tables.TProjectDTO"))
             {
                 TProject projectDAL = new TProject();
                 projectDAL.ProjectId = ((TProjectDTO)entity).ProjectId;
                 projectDAL.ProjectName = ((TProjectDTO)entity).ProjectName;
-                projectDAL.IdProfession = ((TProjectDTO)entity).IdProfession;
                 projectDAL.Status = ((TProjectDTO)entity).Status;
                 projectDAL.IdBeforeProject = ((TProjectDTO)entity).IdBeforeProject;
+                projectDAL.IdStatus = ((TProjectDTO)entity).IdStatus;
+                projectDAL.ClientSide = ((TProjectDTO)entity).ClientSide;
+                projectDAL.ServerSide = ((TProjectDTO)entity).ServerSide;
                 return projectDAL;
             }
             else if (getType.Contains("TAssistantToProject"))
@@ -162,7 +165,7 @@ namespace BL
                 assToProjectDTO.IdProject = ((TAssistantToProject)entity).IdProject;
                 return assToProjectDTO;
             }
-            else if (getType.Contains("DTO.tables.TAssistantToProjectDTO"))
+            else if (getType.Equals("DTO.tables.TAssistantToProjectDTO"))
             {
                 TAssistantToProject assToProjectDAL = new TAssistantToProject();
                 assToProjectDAL.AssistantToProjectId = ((TAssistantToProjectDTO)entity).AssistantToProjectId;
@@ -170,7 +173,7 @@ namespace BL
                 assToProjectDAL.IdAssistant = ((TAssistantToProjectDTO)entity).IdAssistant;
                 return assToProjectDAL;
             }
-            else if (getType.Contains("TStudent"))
+            else if (getType.Contains("TStudent_"))
             {
                 TStudentDTO studentDTO = new TStudentDTO();
                 studentDTO.StudentId = ((TStudent)entity).StudentId;
@@ -182,11 +185,9 @@ namespace BL
                 studentDTO.GradeId = ((TStudent)entity).GradeId;
                 studentDTO.FinalMark = ((TStudent)entity).FinalMark;
                 studentDTO.IdSchool = ((TStudent)entity).IdSchool;
-                studentDTO.ProfessionId = ((TStudent)entity).ProfessionId;
-                studentDTO.Status = ((TStudent)entity).Status;
                 return studentDTO;
             }
-            else if (getType.Contains("DTO.tables.TStudentDTO"))
+            else if (getType.Equals("DTO.tables.TStudentDTO"))
             {
                 TStudent studentDAL = new TStudent();
                 studentDAL.StudentId = ((TStudentDTO)entity).StudentId;
@@ -198,10 +199,40 @@ namespace BL
                 studentDAL.GradeId = ((TStudentDTO)entity).GradeId;
                 studentDAL.FinalMark = ((TStudentDTO)entity).FinalMark;
                 studentDAL.IdSchool = ((TStudentDTO)entity).IdSchool;
-                studentDAL.ProfessionId = ((TStudentDTO)entity).ProfessionId;
-                studentDAL.Status = ((TStudentDTO)entity).Status;
                 return studentDAL;
             }
+            else if (getType.Contains("ass_by_manager_Result"))
+            {
+                ass_by_manager_ResultDTO ass_by_manager_DTO = new ass_by_manager_ResultDTO();
+                ass_by_manager_DTO.AssistantId = ((ass_by_manager_Result)entity).AssistantId;
+                ass_by_manager_DTO.FirstName = ((ass_by_manager_Result)entity).FirstName;
+                ass_by_manager_DTO.LastName = ((ass_by_manager_Result)entity).LastName;
+                ass_by_manager_DTO.Mail = ((ass_by_manager_Result)entity).Mail;
+                ass_by_manager_DTO.ManagerId = ((ass_by_manager_Result)entity).ManagerId;
+                ass_by_manager_DTO.NumbarPhone = ((ass_by_manager_Result)entity).NumbarPhone;
+                ass_by_manager_DTO.SchoolName = ((ass_by_manager_Result)entity).SchoolName;
+                ass_by_manager_DTO.Status = ((ass_by_manager_Result)entity).Status;
+                ass_by_manager_DTO.sumHours = ((ass_by_manager_Result)entity).sumHours;
+                return ass_by_manager_DTO;
+            }
+            else if (getType.Equals("DAL.FolderDAL.ruyhy"))
+            {
+                ruyhyDTO r = new ruyhyDTO();
+                r.SchoolName= ((ruyhy)entity).SchoolName;
+                r.ManagerId= ((ruyhy)entity).ManagerId;
+                r.AssistantId= ((ruyhy)entity).AssistantId;
+                r.sumPrijects= ((ruyhy)entity).sumPrijects;
+                r.FirstName= ((ruyhy)entity).FirstName;
+                r.Mail= ((ruyhy)entity).Mail;
+                r.LastName = ((ruyhy)entity).LastName;
+                r.NumbarPhone = ((ruyhy)entity).NumbarPhone;
+                r.Status = ((ruyhy)entity).Status;
+
+
+
+                return r;
+            }
+
             return null;
 
 

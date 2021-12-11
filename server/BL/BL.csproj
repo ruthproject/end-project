@@ -42,11 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssistantHoursBL.cs" />
-    <Compile Include="AssistantToProjectBL.cs" />
+    <Compile Include="FolderBL\AssistantHoursBL.cs" />
+    <Compile Include="FolderBL\AssistantToProjectBL.cs" />
     <Compile Include="FolderBL\AssistantBL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Convert.cs" />
+    <Compile Include="FolderBL\MailBL.cs" />
     <Compile Include="FolderBL\ProjectBL.cs" />
     <Compile Include="FolderBL\StudentBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

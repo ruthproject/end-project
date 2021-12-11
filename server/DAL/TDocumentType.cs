@@ -17,15 +17,13 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TDocumentType()
         {
-            this.TDocuments = new HashSet<TDocument>();
+            this.TDocument = new HashSet<TDocument>();
         }
     
         public int DocumentTypeId { get; set; }
         public string DocumentTypeName { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TDocument> TDocuments { get; set; }
-        public virtual TProfession TProfession { get; set; }
+        public virtual ICollection<TDocument> TDocument { get; set; }
     }
 }

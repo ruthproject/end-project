@@ -14,7 +14,7 @@ namespace DAL
             {
                 using (ProjectsManagementEntities pm = new ProjectsManagementEntities())
                 {
-                    return pm.TAssistantToProjects.ToList();
+                    return pm.TAssistantToProject.ToList();
                 }
             }
             catch (Exception)

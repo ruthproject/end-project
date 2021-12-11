@@ -32,7 +32,7 @@ namespace DAL
 
         //******************to change it to do where by idProject-to add it in sql db****************
 
-        public IEnumerable<TAssistantHour> GetAllAssistantHours(int id)
+        public IEnumerable<TAssistantHours> GetAllAssistantHours(int id)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace DAL
             }
         }
 
-        public void Put(int id, TAssistantHour AssistantHour)
+        public void Put(int id, TAssistantHours AssistantHour)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace DAL
             }
         }
 
-        public void Post(TAssistantHour AssistantHour)
+        public void Post(TAssistantHours AssistantHour)
         {
             try
             {

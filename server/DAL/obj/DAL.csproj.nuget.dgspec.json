@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DAL\\DAL.csproj": {}
+    "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DAL\\DAL.csproj": {
+    "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DAL\\DAL.csproj",
+        "projectPath": "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DAL\\obj\\",
+        "outputPath": "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -28,8 +28,8 @@
         "frameworks": {
           "net461": {
             "projectReferences": {
-              "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DTO\\DTO.csproj": {
-                "projectPath": "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DTO\\DTO.csproj"
+              "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DTO\\DTO.csproj": {
+                "projectPath": "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DTO\\DTO.csproj"
               }
             }
           }
@@ -57,11 +57,11 @@
         }
       }
     },
-    "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DTO\\DTO.csproj": {
+    "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DTO\\DTO.csproj": {
       "restore": {
-        "projectUniqueName": "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DTO\\DTO.csproj",
+        "projectUniqueName": "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "E:\\תקיות משתמש\\Desktop\\מחובר עובד פרויקט\\‏‏FinalProject - עותק\\DTO\\DTO.csproj"
+        "projectPath": "E:\\תקיות משתמש\\Desktop\\פרויקט גמר-חודש כסליו\\טבת\\חדש\\server\\DTO\\DTO.csproj"
       },
       "frameworks": {
         "net461": {}

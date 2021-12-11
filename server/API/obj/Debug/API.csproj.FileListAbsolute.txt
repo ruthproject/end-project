@@ -676,3 +676,200 @@ E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalPro
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\API\obj\Debug\API.csproj.CopyComplete
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\API\obj\Debug\API.dll
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\API\obj\Debug\API.pdb
+F:\user\Documents\GitHub\end-project\server\API\bin\API.dll.config
+F:\user\Documents\GitHub\end-project\server\API\bin\API.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\API.pdb
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\csc.exe
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\csc.exe.config
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\csc.rsp
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\csi.exe
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\csi.exe.config
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\csi.rsp
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.Managed.Core.targets
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.AppContext.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Collections.Immutable.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Console.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Globalization.Calendars.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.IO.Compression.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.IO.Compression.ZipFile.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.IO.FileSystem.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Net.Http.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Net.Sockets.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Reflection.Metadata.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Threading.Tasks.Extensions.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.ValueTuple.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Xml.XmlDocument.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Xml.XPath.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\vbc.exe
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\vbc.exe.config
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\vbc.rsp
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\VBCSCompiler.exe
+F:\user\Documents\GitHub\end-project\server\API\bin\roslyn\VBCSCompiler.exe.config
+F:\user\Documents\GitHub\end-project\server\API\bin\Antlr3.Runtime.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\BL.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\DTO.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\EntityFramework.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\EntityFramework.SqlServer.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\Microsoft.Web.Infrastructure.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\Newtonsoft.Json.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Net.Http.Formatting.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Cors.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Helpers.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Http.Cors.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Http.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Http.WebHost.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Mvc.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Optimization.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Razor.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.WebPages.Deployment.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.WebPages.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.WebPages.Razor.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\WebGrease.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\DAL.dll
+F:\user\Documents\GitHub\end-project\server\API\bin\BL.pdb
+F:\user\Documents\GitHub\end-project\server\API\bin\DTO.pdb
+F:\user\Documents\GitHub\end-project\server\API\bin\EntityFramework.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\EntityFramework.SqlServer.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Http.Cors.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\Newtonsoft.Json.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Net.Http.Formatting.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Helpers.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Http.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Http.WebHost.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Mvc.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Optimization.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.Razor.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.WebPages.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.WebPages.Deployment.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\System.Web.WebPages.Razor.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\Antlr3.Runtime.pdb
+F:\user\Documents\GitHub\end-project\server\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\user\Documents\GitHub\end-project\server\API\bin\DAL.pdb
+F:\user\Documents\GitHub\end-project\server\API\bin\DAL.dll.config
+F:\user\Documents\GitHub\end-project\server\API\obj\Debug\API.csprojResolveAssemblyReference.cache
+F:\user\Documents\GitHub\end-project\server\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+F:\user\Documents\GitHub\end-project\server\API\obj\Debug\API.dll
+F:\user\Documents\GitHub\end-project\server\API\obj\Debug\API.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\API.dll.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\API.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\API.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\csc.exe
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\csc.exe.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\csc.rsp
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\csi.exe
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\csi.exe.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\csi.rsp
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.Managed.Core.targets
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.AppContext.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Collections.Immutable.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Console.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Globalization.Calendars.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.IO.Compression.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.IO.FileSystem.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Net.Http.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Net.Sockets.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Reflection.Metadata.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.ValueTuple.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Xml.XmlDocument.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Xml.XPath.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\vbc.exe
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\vbc.exe.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\vbc.rsp
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\VBCSCompiler.exe
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\roslyn\VBCSCompiler.exe.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\Antlr3.Runtime.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\BL.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\DAL.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\DTO.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\EntityFramework.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\EntityFramework.SqlServer.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\Microsoft.Web.Infrastructure.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\Newtonsoft.Json.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Net.Http.Formatting.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Cors.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Helpers.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Http.Cors.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Http.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Http.WebHost.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Mvc.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Optimization.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Razor.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.WebPages.Deployment.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.WebPages.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.WebPages.Razor.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\WebGrease.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\BL.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\DAL.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\DAL.dll.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\DTO.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\EntityFramework.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\EntityFramework.SqlServer.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Http.Cors.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\Newtonsoft.Json.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Net.Http.Formatting.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Helpers.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Http.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Http.WebHost.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Mvc.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Optimization.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.Razor.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.WebPages.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.WebPages.Deployment.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\System.Web.WebPages.Razor.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\Antlr3.Runtime.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\obj\Debug\API.csprojAssemblyReference.cache
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\obj\Debug\API.csproj.CopyComplete
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\obj\Debug\API.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\API\obj\Debug\API.pdb

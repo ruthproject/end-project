@@ -28,3 +28,9 @@ E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalPro
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\DTO\obj\Debug\DTO.dll
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\DTO\obj\Debug\DTO.pdb
+F:\user\Documents\GitHub\end-project\server\DTO\bin\Debug\DTO.dll
+F:\user\Documents\GitHub\end-project\server\DTO\bin\Debug\DTO.pdb
+F:\user\Documents\GitHub\end-project\server\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+F:\user\Documents\GitHub\end-project\server\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+F:\user\Documents\GitHub\end-project\server\DTO\obj\Debug\DTO.dll
+F:\user\Documents\GitHub\end-project\server\DTO\obj\Debug\DTO.pdb

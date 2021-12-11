@@ -17,9 +17,11 @@ namespace DTO.tables
         public Nullable<int> GradeId { get; set; }
         public Nullable<int> FinalMark { get; set; }
         public Nullable<int> IdSchool { get; set; }
-        public Nullable<int> ProfessionId { get; set; }
-        public Nullable<bool> Status { get; set; }
 
-     
+        //public virtual TGradeDTO TGrade { get; set; }
+        ////public virtual TSchoolDTO TSchool { get; set; }
+        //public virtual TUserDTO TUser { get; set; }
+
+
     }
 }

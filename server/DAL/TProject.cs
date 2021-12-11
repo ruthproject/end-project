@@ -17,23 +17,22 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TProject()
         {
-            this.TAssistantToProjects = new HashSet<TAssistantToProject>();
-            this.TDocuments = new HashSet<TDocument>();
-            this.TStudents = new HashSet<TStudent>();
+            this.TAssistantToProject = new HashSet<TAssistantToProject>();
+            this.TDocument = new HashSet<TDocument>();
         }
     
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
-        public Nullable<int> IdProfession { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> IdBeforeProject { get; set; }
+        public string ClientSide { get; set; }
+        public string ServerSide { get; set; }
+        public Nullable<int> IdStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TAssistantToProject> TAssistantToProjects { get; set; }
+        public virtual ICollection<TAssistantToProject> TAssistantToProject { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TDocument> TDocuments { get; set; }
-        public virtual TProfession TProfession { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TStudent> TStudents { get; set; }
+        public virtual ICollection<TDocument> TDocument { get; set; }
+        public virtual TStatus TStatus { get; set; }
     }
 }

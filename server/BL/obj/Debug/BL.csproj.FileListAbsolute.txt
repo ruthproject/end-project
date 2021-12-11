@@ -79,3 +79,30 @@ E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalPro
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\BL\obj\Debug\BL.csproj.CopyComplete
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\BL\obj\Debug\BL.dll
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\BL\obj\Debug\BL.pdb
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\BL.dll
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\BL.pdb
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\DAL.dll
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\DTO.dll
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\EntityFramework.dll
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\DAL.pdb
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\DAL.dll.config
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\DTO.pdb
+F:\user\Documents\GitHub\end-project\server\BL\bin\Debug\EntityFramework.xml
+F:\user\Documents\GitHub\end-project\server\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+F:\user\Documents\GitHub\end-project\server\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+F:\user\Documents\GitHub\end-project\server\BL\obj\Debug\BL.dll
+F:\user\Documents\GitHub\end-project\server\BL\obj\Debug\BL.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\BL.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\BL.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\DAL.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\DTO.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\EntityFramework.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\DAL.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\DAL.dll.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\DTO.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\bin\Debug\EntityFramework.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\obj\Debug\BL.csprojAssemblyReference.cache
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\obj\Debug\BL.csproj.CopyComplete
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\obj\Debug\BL.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\BL\obj\Debug\BL.pdb

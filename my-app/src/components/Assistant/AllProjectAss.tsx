@@ -74,11 +74,12 @@ const AllProjectAss = (props: { currenAssistant: any, currentProjectId: number, 
                                             {
                                                 <TableCell >{item['ProjectName']}</TableCell>
                                             }
+                                            </button>
                                             {
                                                 <TableCell >{item['Status'] == true ? 'מאושר' : 'לא'}</TableCell>
                                             }
 
-                                        </button>
+                                       
                                     </TableRow>
                                 );
                             })}
@@ -89,9 +90,7 @@ const AllProjectAss = (props: { currenAssistant: any, currentProjectId: number, 
             </Paper>
 
 
-            {/* <ProjectsProvider>
-          <EditDetails /> 
-          </ProjectsProvider> */}
+         
 
         </div>
     )

@@ -1,18 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ProjectsManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="TAssistant">
     <Key>
       <PropertyRef Name="AssistantId" />
     </Key>
     <Property Name="AssistantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserId" Type="Int32" />
-    <Property Name="Status" Type="Boolean" />
-    <Property Name="ProfessionId" Type="Int32" />
+    <Property Name="AssToManagerId" Type="Int32" />
     <NavigationProperty Name="TUser" Relationship="Self.FK_TAssistant_TUser" FromRole="TAssistant" ToRole="TUser" />
     <NavigationProperty Name="TAssistantHours" Relationship="Self.FK_TAssistantHours_TAssistant" FromRole="TAssistant" ToRole="TAssistantHours" />
-    <NavigationProperty Name="TAssistantToProjects" Relationship="Self.FK_TAssistantToProject_TAssistant" FromRole="TAssistant" ToRole="TAssistantToProject" />
+    <NavigationProperty Name="TAssistantToProject" Relationship="Self.FK_TAssistantToProject_TAssistant" FromRole="TAssistant" ToRole="TAssistantToProject" />
+    <NavigationProperty Name="TTechnologyToAss" Relationship="Self.FK_TTechnologyToAss_TAssistant" FromRole="TAssistant" ToRole="TTechnologyToAss" />
   </EntityType>
-  <EntityType Name="TAssistantHour">
+  <EntityType Name="TAssistantHours">
     <Key>
       <PropertyRef Name="AssistantHoursId" />
     </Key>
@@ -23,7 +33,9 @@
     <Property Name="WathToDo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ProjectId" Type="Int32" />
     <Property Name="finishChores" Type="Int32" />
+    <Property Name="AssToManagerId" Type="Int32" />
     <NavigationProperty Name="TAssistant" Relationship="Self.FK_TAssistantHours_TAssistant" FromRole="TAssistantHours" ToRole="TAssistant" />
+    <NavigationProperty Name="TAssToManager" Relationship="Self.FK_TAssistantHours_TAssToManager" FromRole="TAssistantHours" ToRole="TAssToManager" />
   </EntityType>
   <EntityType Name="TAssistantToProject">
     <Key>
@@ -34,6 +46,17 @@
     <Property Name="IdProject" Type="Int32" />
     <NavigationProperty Name="TAssistant" Relationship="Self.FK_TAssistantToProject_TAssistant" FromRole="TAssistantToProject" ToRole="TAssistant" />
     <NavigationProperty Name="TProject" Relationship="Self.FK_TAssistantToProject_TProject" FromRole="TAssistantToProject" ToRole="TProject" />
+  </EntityType>
+  <EntityType Name="TAssToManager">
+    <Key>
+      <PropertyRef Name="AssToManagerId" />
+    </Key>
+    <Property Name="AssToManagerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AssistantId" Type="Int32" />
+    <Property Name="ManagerId" Type="Int32" />
+    <Property Name="SchoolId" Type="Int32" />
+    <NavigationProperty Name="TAssistantHours" Relationship="Self.FK_TAssistantHours_TAssToManager" FromRole="TAssToManager" ToRole="TAssistantHours" />
+    <NavigationProperty Name="TSchool" Relationship="Self.FK_TAssToManager_TSchool" FromRole="TAssToManager" ToRole="TSchool" />
   </EntityType>
   <EntityType Name="TDestinationGroup">
     <Key>
@@ -52,9 +75,7 @@
     </Key>
     <Property Name="DestinationTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DestinationTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="ProfessionId" Type="Int32" />
-    <NavigationProperty Name="TDestinationGroups" Relationship="Self.FK_TDestinationGroup_TDestinationType" FromRole="TDestinationType" ToRole="TDestinationGroup" />
-    <NavigationProperty Name="TProfession" Relationship="Self.FK_TDestinationType_TProfession1" FromRole="TDestinationType" ToRole="TProfession" />
+    <NavigationProperty Name="TDestinationGroup" Relationship="Self.FK_TDestinationGroup_TDestinationType" FromRole="TDestinationType" ToRole="TDestinationGroup" />
   </EntityType>
   <EntityType Name="TDocument">
     <Key>
@@ -74,9 +95,7 @@
     </Key>
     <Property Name="DocumentTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DocumentTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="ProfessionId" Type="Int32" />
-    <NavigationProperty Name="TDocuments" Relationship="Self.FK_TDocument_TDocumentType" FromRole="TDocumentType" ToRole="TDocument" />
-    <NavigationProperty Name="TProfession" Relationship="Self.FK_TDocumentType_TProfession" FromRole="TDocumentType" ToRole="TProfession" />
+    <NavigationProperty Name="TDocument" Relationship="Self.FK_TDocument_TDocumentType" FromRole="TDocumentType" ToRole="TDocument" />
   </EntityType>
   <EntityType Name="TGrade">
     <Key>
@@ -85,20 +104,10 @@
     <Property Name="GradeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GradeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="GradeIdSchool" Type="Int32" />
-    <NavigationProperty Name="TDestinationGroups" Relationship="Self.FK_TDestinationGroup_TGrade" FromRole="TGrade" ToRole="TDestinationGroup" />
+    <NavigationProperty Name="TDestinationGroup" Relationship="Self.FK_TDestinationGroup_TGrade" FromRole="TGrade" ToRole="TDestinationGroup" />
     <NavigationProperty Name="TSchool" Relationship="Self.FK_TGrade_TSchool" FromRole="TGrade" ToRole="TSchool" />
-    <NavigationProperty Name="TMessages" Relationship="Self.FK_TMessage_TGrade" FromRole="TGrade" ToRole="TMessage" />
-    <NavigationProperty Name="TStudents" Relationship="Self.FK_TStudent_TGrade" FromRole="TGrade" ToRole="TStudent" />
-  </EntityType>
-  <EntityType Name="TListValue">
-    <Key>
-      <PropertyRef Name="IdListprameter" />
-    </Key>
-    <Property Name="IdListprameter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdParameter" Type="Int32" />
-    <Property Name="IdProfession" Type="Int32" />
-    <NavigationProperty Name="TParameter" Relationship="Self.FK_TListValues_TParameter" FromRole="TListValues" ToRole="TParameter" />
-    <NavigationProperty Name="TProfession" Relationship="Self.FK_TListValues_TProfession" FromRole="TListValues" ToRole="TProfession" />
+    <NavigationProperty Name="TMessage" Relationship="Self.FK_TMessage_TGrade" FromRole="TGrade" ToRole="TMessage" />
+    <NavigationProperty Name="TStudent" Relationship="Self.FK_TStudent_TGrade" FromRole="TGrade" ToRole="TStudent" />
   </EntityType>
   <EntityType Name="TMessage">
     <Key>
@@ -107,19 +116,9 @@
     <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdSchool" Type="Int32" />
     <Property Name="IdGrade" Type="Int32" />
-    <Property Name="IdProfession" Type="Int32" />
     <Property Name="StudentsOrAssistants" Type="Boolean" />
     <NavigationProperty Name="TGrade" Relationship="Self.FK_TMessage_TGrade" FromRole="TMessage" ToRole="TGrade" />
-    <NavigationProperty Name="TProfession" Relationship="Self.FK_TMessage_TProfession" FromRole="TMessage" ToRole="TProfession" />
     <NavigationProperty Name="TSchool" Relationship="Self.FK_TMessage_TSchool" FromRole="TMessage" ToRole="TSchool" />
-  </EntityType>
-  <EntityType Name="TParameter">
-    <Key>
-      <PropertyRef Name="ParameterId" />
-    </Key>
-    <Property Name="ParameterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ParameterName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="TListValues" Relationship="Self.FK_TListValues_TParameter" FromRole="TParameter" ToRole="TListValues" />
   </EntityType>
   <EntityType Name="TPermission">
     <Key>
@@ -128,19 +127,7 @@
     <Property Name="PermissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PermissionName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="PermissionValue" Type="Int32" />
-    <NavigationProperty Name="TUsers" Relationship="Self.FK_TUser_TPermission" FromRole="TPermission" ToRole="TUser" />
-  </EntityType>
-  <EntityType Name="TProfession">
-    <Key>
-      <PropertyRef Name="ProfessionId" />
-    </Key>
-    <Property Name="ProfessionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProfessionName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="TDestinationTypes" Relationship="Self.FK_TDestinationType_TProfession1" FromRole="TProfession" ToRole="TDestinationType" />
-    <NavigationProperty Name="TDocumentTypes" Relationship="Self.FK_TDocumentType_TProfession" FromRole="TProfession" ToRole="TDocumentType" />
-    <NavigationProperty Name="TListValues" Relationship="Self.FK_TListValues_TProfession" FromRole="TProfession" ToRole="TListValues" />
-    <NavigationProperty Name="TMessages" Relationship="Self.FK_TMessage_TProfession" FromRole="TProfession" ToRole="TMessage" />
-    <NavigationProperty Name="TProjects" Relationship="Self.FK_TProject_TProfession" FromRole="TProfession" ToRole="TProject" />
+    <NavigationProperty Name="TUser" Relationship="Self.FK_TUser_TPermission" FromRole="TPermission" ToRole="TUser" />
   </EntityType>
   <EntityType Name="TProject">
     <Key>
@@ -148,13 +135,14 @@
     </Key>
     <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProjectName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="IdProfession" Type="Int32" />
     <Property Name="Status" Type="Boolean" />
     <Property Name="IdBeforeProject" Type="Int32" />
-    <NavigationProperty Name="TAssistantToProjects" Relationship="Self.FK_TAssistantToProject_TProject" FromRole="TProject" ToRole="TAssistantToProject" />
-    <NavigationProperty Name="TDocuments" Relationship="Self.FK_TDocument_TProject" FromRole="TProject" ToRole="TDocument" />
-    <NavigationProperty Name="TProfession" Relationship="Self.FK_TProject_TProfession" FromRole="TProject" ToRole="TProfession" />
-    <NavigationProperty Name="TStudents" Relationship="Self.FK_TStudent_TProject" FromRole="TProject" ToRole="TStudent" />
+    <Property Name="ClientSide" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServerSide" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdStatus" Type="Int32" />
+    <NavigationProperty Name="TAssistantToProject" Relationship="Self.FK_TAssistantToProject_TProject" FromRole="TProject" ToRole="TAssistantToProject" />
+    <NavigationProperty Name="TDocument" Relationship="Self.FK_TDocument_TProject" FromRole="TProject" ToRole="TDocument" />
+    <NavigationProperty Name="TStatus" Relationship="Self.FK_TProject_TStatus" FromRole="TProject" ToRole="TStatus" />
   </EntityType>
   <EntityType Name="TSchool">
     <Key>
@@ -162,16 +150,18 @@
     </Key>
     <Property Name="SchoolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SchoolName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="TGrades" Relationship="Self.FK_TGrade_TSchool" FromRole="TSchool" ToRole="TGrade" />
-    <NavigationProperty Name="TMessages" Relationship="Self.FK_TMessage_TSchool" FromRole="TSchool" ToRole="TMessage" />
-    <NavigationProperty Name="TStudents" Relationship="Self.FK_TStudent_TSchool" FromRole="TSchool" ToRole="TStudent" />
+    <NavigationProperty Name="TAssToManager" Relationship="Self.FK_TAssToManager_TSchool" FromRole="TSchool" ToRole="TAssToManager" />
+    <NavigationProperty Name="TGrade" Relationship="Self.FK_TGrade_TSchool" FromRole="TSchool" ToRole="TGrade" />
+    <NavigationProperty Name="TMessage" Relationship="Self.FK_TMessage_TSchool" FromRole="TSchool" ToRole="TMessage" />
+    <NavigationProperty Name="TStudent" Relationship="Self.FK_TStudent_TSchool" FromRole="TSchool" ToRole="TStudent" />
   </EntityType>
-  <EntityType Name="TStatu">
+  <EntityType Name="TStatus">
     <Key>
       <PropertyRef Name="StatusId" />
     </Key>
     <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StatusName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TProject" Relationship="Self.FK_TProject_TStatus" FromRole="TStatus" ToRole="TProject" />
   </EntityType>
   <EntityType Name="TStudent">
     <Key>
@@ -186,12 +176,27 @@
     <Property Name="GradeId" Type="Int32" />
     <Property Name="FinalMark" Type="Int32" />
     <Property Name="IdSchool" Type="Int32" />
-    <Property Name="ProfessionId" Type="Int32" />
-    <Property Name="Status" Type="Boolean" />
     <NavigationProperty Name="TGrade" Relationship="Self.FK_TStudent_TGrade" FromRole="TStudent" ToRole="TGrade" />
-    <NavigationProperty Name="TProject" Relationship="Self.FK_TStudent_TProject" FromRole="TStudent" ToRole="TProject" />
     <NavigationProperty Name="TSchool" Relationship="Self.FK_TStudent_TSchool" FromRole="TStudent" ToRole="TSchool" />
     <NavigationProperty Name="TUser" Relationship="Self.FK_TStudent_TUser1" FromRole="TStudent" ToRole="TUser" />
+  </EntityType>
+  <EntityType Name="TTechnology">
+    <Key>
+      <PropertyRef Name="IdTechnology" />
+    </Key>
+    <Property Name="IdTechnology" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameTechnology" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TTechnologyToAss" Relationship="Self.FK_TTechnologyToAss_TTechnology" FromRole="TTechnology" ToRole="TTechnologyToAss" />
+  </EntityType>
+  <EntityType Name="TTechnologyToAss">
+    <Key>
+      <PropertyRef Name="IdTechnologyToAss" />
+    </Key>
+    <Property Name="IdTechnologyToAss" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdAssistant" Type="Int32" />
+    <Property Name="IdTechnology" Type="Int32" />
+    <NavigationProperty Name="TAssistant" Relationship="Self.FK_TTechnologyToAss_TAssistant" FromRole="TTechnologyToAss" ToRole="TAssistant" />
+    <NavigationProperty Name="TTechnology" Relationship="Self.FK_TTechnologyToAss_TTechnology" FromRole="TTechnologyToAss" ToRole="TTechnology" />
   </EntityType>
   <EntityType Name="TUser">
     <Key>
@@ -205,20 +210,10 @@
     <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="NumbarPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Mail" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="TAssistants" Relationship="Self.FK_TAssistant_TUser" FromRole="TUser" ToRole="TAssistant" />
-    <NavigationProperty Name="TPermission" Relationship="Self.FK_TUser_TPermission" FromRole="TUser" ToRole="TPermission" />
-    <NavigationProperty Name="TStudents" Relationship="Self.FK_TStudent_TUser1" FromRole="TUser" ToRole="TStudent" />
-  </EntityType>
-  <EntityType Name="projects_students">
-    <Key>
-      <PropertyRef Name="ProjectId" />
-      <PropertyRef Name="IdUser" />
-    </Key>
-    <Property Name="ProjectId" Type="Int32" Nullable="false" />
-    <Property Name="ProjectName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Boolean" />
-    <Property Name="IdUser" Type="Int32" Nullable="false" />
-    <Property Name="fullname" Type="String" MaxLength="41" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TAssistant" Relationship="Self.FK_TAssistant_TUser" FromRole="TUser" ToRole="TAssistant" />
+    <NavigationProperty Name="TPermission" Relationship="Self.FK_TUser_TPermission" FromRole="TUser" ToRole="TPermission" />
+    <NavigationProperty Name="TStudent" Relationship="Self.FK_TStudent_TUser1" FromRole="TUser" ToRole="TStudent" />
   </EntityType>
   <Association Name="FK_TAssistant_TUser">
     <End Role="TUser" Type="Self.TUser" Multiplicity="0..1" />
@@ -234,7 +229,7 @@
   </Association>
   <Association Name="FK_TAssistantHours_TAssistant">
     <End Role="TAssistant" Type="Self.TAssistant" Multiplicity="0..1" />
-    <End Role="TAssistantHours" Type="Self.TAssistantHour" Multiplicity="*" />
+    <End Role="TAssistantHours" Type="Self.TAssistantHours" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TAssistant">
         <PropertyRef Name="AssistantId" />
@@ -256,6 +251,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TTechnologyToAss_TAssistant">
+    <End Role="TAssistant" Type="Self.TAssistant" Multiplicity="0..1" />
+    <End Role="TTechnologyToAss" Type="Self.TTechnologyToAss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAssistant">
+        <PropertyRef Name="AssistantId" />
+      </Principal>
+      <Dependent Role="TTechnologyToAss">
+        <PropertyRef Name="IdAssistant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAssistantHours_TAssToManager">
+    <End Role="TAssToManager" Type="Self.TAssToManager" Multiplicity="0..1" />
+    <End Role="TAssistantHours" Type="Self.TAssistantHours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAssToManager">
+        <PropertyRef Name="AssToManagerId" />
+      </Principal>
+      <Dependent Role="TAssistantHours">
+        <PropertyRef Name="AssToManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TAssistantToProject_TProject">
     <End Role="TProject" Type="Self.TProject" Multiplicity="0..1" />
     <End Role="TAssistantToProject" Type="Self.TAssistantToProject" Multiplicity="*" />
@@ -265,6 +284,18 @@
       </Principal>
       <Dependent Role="TAssistantToProject">
         <PropertyRef Name="IdProject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAssToManager_TSchool">
+    <End Role="TSchool" Type="Self.TSchool" Multiplicity="0..1" />
+    <End Role="TAssToManager" Type="Self.TAssToManager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSchool">
+        <PropertyRef Name="SchoolId" />
+      </Principal>
+      <Dependent Role="TAssToManager">
+        <PropertyRef Name="SchoolId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -292,18 +323,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TDestinationType_TProfession1">
-    <End Role="TProfession" Type="Self.TProfession" Multiplicity="0..1" />
-    <End Role="TDestinationType" Type="Self.TDestinationType" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TProfession">
-        <PropertyRef Name="ProfessionId" />
-      </Principal>
-      <Dependent Role="TDestinationType">
-        <PropertyRef Name="ProfessionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TDocument_TDocumentType">
     <End Role="TDocumentType" Type="Self.TDocumentType" Multiplicity="0..1" />
     <End Role="TDocument" Type="Self.TDocument" Multiplicity="*" />
@@ -325,18 +344,6 @@
       </Principal>
       <Dependent Role="TDocument">
         <PropertyRef Name="ProjectId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TDocumentType_TProfession">
-    <End Role="TProfession" Type="Self.TProfession" Multiplicity="0..1" />
-    <End Role="TDocumentType" Type="Self.TDocumentType" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TProfession">
-        <PropertyRef Name="ProfessionId" />
-      </Principal>
-      <Dependent Role="TDocumentType">
-        <PropertyRef Name="ProfessionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -376,42 +383,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TListValues_TParameter">
-    <End Role="TParameter" Type="Self.TParameter" Multiplicity="0..1" />
-    <End Role="TListValues" Type="Self.TListValue" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TParameter">
-        <PropertyRef Name="ParameterId" />
-      </Principal>
-      <Dependent Role="TListValues">
-        <PropertyRef Name="IdParameter" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TListValues_TProfession">
-    <End Role="TProfession" Type="Self.TProfession" Multiplicity="0..1" />
-    <End Role="TListValues" Type="Self.TListValue" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TProfession">
-        <PropertyRef Name="ProfessionId" />
-      </Principal>
-      <Dependent Role="TListValues">
-        <PropertyRef Name="IdProfession" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TMessage_TProfession">
-    <End Role="TProfession" Type="Self.TProfession" Multiplicity="0..1" />
-    <End Role="TMessage" Type="Self.TMessage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TProfession">
-        <PropertyRef Name="ProfessionId" />
-      </Principal>
-      <Dependent Role="TMessage">
-        <PropertyRef Name="IdProfession" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TMessage_TSchool">
     <End Role="TSchool" Type="Self.TSchool" Multiplicity="0..1" />
     <End Role="TMessage" Type="Self.TMessage" Multiplicity="*" />
@@ -436,27 +407,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TProject_TProfession">
-    <End Role="TProfession" Type="Self.TProfession" Multiplicity="0..1" />
+  <Association Name="FK_TProject_TStatus">
+    <End Role="TStatus" Type="Self.TStatus" Multiplicity="0..1" />
     <End Role="TProject" Type="Self.TProject" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TProfession">
-        <PropertyRef Name="ProfessionId" />
+      <Principal Role="TStatus">
+        <PropertyRef Name="StatusId" />
       </Principal>
       <Dependent Role="TProject">
-        <PropertyRef Name="IdProfession" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TStudent_TProject">
-    <End Role="TProject" Type="Self.TProject" Multiplicity="0..1" />
-    <End Role="TStudent" Type="Self.TStudent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TProject">
-        <PropertyRef Name="ProjectId" />
-      </Principal>
-      <Dependent Role="TStudent">
-        <PropertyRef Name="ProfessionId" />
+        <PropertyRef Name="IdStatus" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -484,113 +443,131 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TTechnologyToAss_TTechnology">
+    <End Role="TTechnology" Type="Self.TTechnology" Multiplicity="0..1" />
+    <End Role="TTechnologyToAss" Type="Self.TTechnologyToAss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTechnology">
+        <PropertyRef Name="IdTechnology" />
+      </Principal>
+      <Dependent Role="TTechnologyToAss">
+        <PropertyRef Name="IdTechnology" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ProjectsManagementEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="TAssistants" EntityType="Self.TAssistant" />
-    <EntitySet Name="TAssistantHours" EntityType="Self.TAssistantHour" />
-    <EntitySet Name="TAssistantToProjects" EntityType="Self.TAssistantToProject" />
-    <EntitySet Name="TDestinationGroups" EntityType="Self.TDestinationGroup" />
-    <EntitySet Name="TDestinationTypes" EntityType="Self.TDestinationType" />
-    <EntitySet Name="TDocuments" EntityType="Self.TDocument" />
-    <EntitySet Name="TDocumentTypes" EntityType="Self.TDocumentType" />
-    <EntitySet Name="TGrades" EntityType="Self.TGrade" />
-    <EntitySet Name="TListValues" EntityType="Self.TListValue" />
-    <EntitySet Name="TMessages" EntityType="Self.TMessage" />
-    <EntitySet Name="TParameters" EntityType="Self.TParameter" />
-    <EntitySet Name="TPermissions" EntityType="Self.TPermission" />
-    <EntitySet Name="TProfessions" EntityType="Self.TProfession" />
-    <EntitySet Name="TProjects" EntityType="Self.TProject" />
-    <EntitySet Name="TSchools" EntityType="Self.TSchool" />
-    <EntitySet Name="TStatus" EntityType="Self.TStatu" />
-    <EntitySet Name="TStudents" EntityType="Self.TStudent" />
-    <EntitySet Name="TUsers" EntityType="Self.TUser" />
-    <EntitySet Name="projects_students" EntityType="Self.projects_students" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TAssistant" EntityType="Self.TAssistant" />
+    <EntitySet Name="TAssistantHours" EntityType="Self.TAssistantHours" />
+    <EntitySet Name="TAssistantToProject" EntityType="Self.TAssistantToProject" />
+    <EntitySet Name="TAssToManager" EntityType="Self.TAssToManager" />
+    <EntitySet Name="TDestinationGroup" EntityType="Self.TDestinationGroup" />
+    <EntitySet Name="TDestinationType" EntityType="Self.TDestinationType" />
+    <EntitySet Name="TDocument" EntityType="Self.TDocument" />
+    <EntitySet Name="TDocumentType" EntityType="Self.TDocumentType" />
+    <EntitySet Name="TGrade" EntityType="Self.TGrade" />
+    <EntitySet Name="TMessage" EntityType="Self.TMessage" />
+    <EntitySet Name="TPermission" EntityType="Self.TPermission" />
+    <EntitySet Name="TProject" EntityType="Self.TProject" />
+    <EntitySet Name="TSchool" EntityType="Self.TSchool" />
+    <EntitySet Name="TStatus" EntityType="Self.TStatus" />
+    <EntitySet Name="TStudent" EntityType="Self.TStudent" />
+    <EntitySet Name="TTechnology" EntityType="Self.TTechnology" />
+    <EntitySet Name="TTechnologyToAss" EntityType="Self.TTechnologyToAss" />
+    <EntitySet Name="TUser" EntityType="Self.TUser" />
     <AssociationSet Name="FK_TAssistant_TUser" Association="Self.FK_TAssistant_TUser">
-      <End Role="TUser" EntitySet="TUsers" />
-      <End Role="TAssistant" EntitySet="TAssistants" />
+      <End Role="TUser" EntitySet="TUser" />
+      <End Role="TAssistant" EntitySet="TAssistant" />
     </AssociationSet>
     <AssociationSet Name="FK_TAssistantHours_TAssistant" Association="Self.FK_TAssistantHours_TAssistant">
-      <End Role="TAssistant" EntitySet="TAssistants" />
+      <End Role="TAssistant" EntitySet="TAssistant" />
       <End Role="TAssistantHours" EntitySet="TAssistantHours" />
     </AssociationSet>
     <AssociationSet Name="FK_TAssistantToProject_TAssistant" Association="Self.FK_TAssistantToProject_TAssistant">
-      <End Role="TAssistant" EntitySet="TAssistants" />
-      <End Role="TAssistantToProject" EntitySet="TAssistantToProjects" />
+      <End Role="TAssistant" EntitySet="TAssistant" />
+      <End Role="TAssistantToProject" EntitySet="TAssistantToProject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTechnologyToAss_TAssistant" Association="Self.FK_TTechnologyToAss_TAssistant">
+      <End Role="TAssistant" EntitySet="TAssistant" />
+      <End Role="TTechnologyToAss" EntitySet="TTechnologyToAss" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAssistantHours_TAssToManager" Association="Self.FK_TAssistantHours_TAssToManager">
+      <End Role="TAssToManager" EntitySet="TAssToManager" />
+      <End Role="TAssistantHours" EntitySet="TAssistantHours" />
     </AssociationSet>
     <AssociationSet Name="FK_TAssistantToProject_TProject" Association="Self.FK_TAssistantToProject_TProject">
-      <End Role="TProject" EntitySet="TProjects" />
-      <End Role="TAssistantToProject" EntitySet="TAssistantToProjects" />
+      <End Role="TProject" EntitySet="TProject" />
+      <End Role="TAssistantToProject" EntitySet="TAssistantToProject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAssToManager_TSchool" Association="Self.FK_TAssToManager_TSchool">
+      <End Role="TSchool" EntitySet="TSchool" />
+      <End Role="TAssToManager" EntitySet="TAssToManager" />
     </AssociationSet>
     <AssociationSet Name="FK_TDestinationGroup_TDestinationType" Association="Self.FK_TDestinationGroup_TDestinationType">
-      <End Role="TDestinationType" EntitySet="TDestinationTypes" />
-      <End Role="TDestinationGroup" EntitySet="TDestinationGroups" />
+      <End Role="TDestinationType" EntitySet="TDestinationType" />
+      <End Role="TDestinationGroup" EntitySet="TDestinationGroup" />
     </AssociationSet>
     <AssociationSet Name="FK_TDestinationGroup_TGrade" Association="Self.FK_TDestinationGroup_TGrade">
-      <End Role="TGrade" EntitySet="TGrades" />
-      <End Role="TDestinationGroup" EntitySet="TDestinationGroups" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TDestinationType_TProfession1" Association="Self.FK_TDestinationType_TProfession1">
-      <End Role="TProfession" EntitySet="TProfessions" />
-      <End Role="TDestinationType" EntitySet="TDestinationTypes" />
+      <End Role="TGrade" EntitySet="TGrade" />
+      <End Role="TDestinationGroup" EntitySet="TDestinationGroup" />
     </AssociationSet>
     <AssociationSet Name="FK_TDocument_TDocumentType" Association="Self.FK_TDocument_TDocumentType">
-      <End Role="TDocumentType" EntitySet="TDocumentTypes" />
-      <End Role="TDocument" EntitySet="TDocuments" />
+      <End Role="TDocumentType" EntitySet="TDocumentType" />
+      <End Role="TDocument" EntitySet="TDocument" />
     </AssociationSet>
     <AssociationSet Name="FK_TDocument_TProject" Association="Self.FK_TDocument_TProject">
-      <End Role="TProject" EntitySet="TProjects" />
-      <End Role="TDocument" EntitySet="TDocuments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TDocumentType_TProfession" Association="Self.FK_TDocumentType_TProfession">
-      <End Role="TProfession" EntitySet="TProfessions" />
-      <End Role="TDocumentType" EntitySet="TDocumentTypes" />
+      <End Role="TProject" EntitySet="TProject" />
+      <End Role="TDocument" EntitySet="TDocument" />
     </AssociationSet>
     <AssociationSet Name="FK_TGrade_TSchool" Association="Self.FK_TGrade_TSchool">
-      <End Role="TSchool" EntitySet="TSchools" />
-      <End Role="TGrade" EntitySet="TGrades" />
+      <End Role="TSchool" EntitySet="TSchool" />
+      <End Role="TGrade" EntitySet="TGrade" />
     </AssociationSet>
     <AssociationSet Name="FK_TMessage_TGrade" Association="Self.FK_TMessage_TGrade">
-      <End Role="TGrade" EntitySet="TGrades" />
-      <End Role="TMessage" EntitySet="TMessages" />
+      <End Role="TGrade" EntitySet="TGrade" />
+      <End Role="TMessage" EntitySet="TMessage" />
     </AssociationSet>
     <AssociationSet Name="FK_TStudent_TGrade" Association="Self.FK_TStudent_TGrade">
-      <End Role="TGrade" EntitySet="TGrades" />
-      <End Role="TStudent" EntitySet="TStudents" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TListValues_TParameter" Association="Self.FK_TListValues_TParameter">
-      <End Role="TParameter" EntitySet="TParameters" />
-      <End Role="TListValues" EntitySet="TListValues" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TListValues_TProfession" Association="Self.FK_TListValues_TProfession">
-      <End Role="TProfession" EntitySet="TProfessions" />
-      <End Role="TListValues" EntitySet="TListValues" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TMessage_TProfession" Association="Self.FK_TMessage_TProfession">
-      <End Role="TProfession" EntitySet="TProfessions" />
-      <End Role="TMessage" EntitySet="TMessages" />
+      <End Role="TGrade" EntitySet="TGrade" />
+      <End Role="TStudent" EntitySet="TStudent" />
     </AssociationSet>
     <AssociationSet Name="FK_TMessage_TSchool" Association="Self.FK_TMessage_TSchool">
-      <End Role="TSchool" EntitySet="TSchools" />
-      <End Role="TMessage" EntitySet="TMessages" />
+      <End Role="TSchool" EntitySet="TSchool" />
+      <End Role="TMessage" EntitySet="TMessage" />
     </AssociationSet>
     <AssociationSet Name="FK_TUser_TPermission" Association="Self.FK_TUser_TPermission">
-      <End Role="TPermission" EntitySet="TPermissions" />
-      <End Role="TUser" EntitySet="TUsers" />
+      <End Role="TPermission" EntitySet="TPermission" />
+      <End Role="TUser" EntitySet="TUser" />
     </AssociationSet>
-    <AssociationSet Name="FK_TProject_TProfession" Association="Self.FK_TProject_TProfession">
-      <End Role="TProfession" EntitySet="TProfessions" />
-      <End Role="TProject" EntitySet="TProjects" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TStudent_TProject" Association="Self.FK_TStudent_TProject">
-      <End Role="TProject" EntitySet="TProjects" />
-      <End Role="TStudent" EntitySet="TStudents" />
+    <AssociationSet Name="FK_TProject_TStatus" Association="Self.FK_TProject_TStatus">
+      <End Role="TStatus" EntitySet="TStatus" />
+      <End Role="TProject" EntitySet="TProject" />
     </AssociationSet>
     <AssociationSet Name="FK_TStudent_TSchool" Association="Self.FK_TStudent_TSchool">
-      <End Role="TSchool" EntitySet="TSchools" />
-      <End Role="TStudent" EntitySet="TStudents" />
+      <End Role="TSchool" EntitySet="TSchool" />
+      <End Role="TStudent" EntitySet="TStudent" />
     </AssociationSet>
     <AssociationSet Name="FK_TStudent_TUser1" Association="Self.FK_TStudent_TUser1">
-      <End Role="TUser" EntitySet="TUsers" />
-      <End Role="TStudent" EntitySet="TStudents" />
+      <End Role="TUser" EntitySet="TUser" />
+      <End Role="TStudent" EntitySet="TStudent" />
     </AssociationSet>
+    <AssociationSet Name="FK_TTechnologyToAss_TTechnology" Association="Self.FK_TTechnologyToAss_TTechnology">
+      <End Role="TTechnology" EntitySet="TTechnology" />
+      <End Role="TTechnologyToAss" EntitySet="TTechnologyToAss" />
+    </AssociationSet>
+    <FunctionImport Name="ass_by_manager" ReturnType="Collection(ProjectsManagementModel.ass_by_manager_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="ass_by_manager_Result">
+    <Property Type="Int32" Name="ManagerId" Nullable="true" />
+    <Property Type="String" Name="SchoolName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="sumHours" Nullable="true" />
+    <Property Type="Int32" Name="AssistantId" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Mail" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NumbarPhone" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
 </Schema>

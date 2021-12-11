@@ -12,6 +12,8 @@ namespace DAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ProjectsManagementEntities : DbContext
     {
@@ -25,24 +27,33 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TAssistant> TAssistants { get; set; }
-        public virtual DbSet<TAssistantHour> TAssistantHours { get; set; }
-        public virtual DbSet<TAssistantToProject> TAssistantToProjects { get; set; }
-        public virtual DbSet<TDestinationGroup> TDestinationGroups { get; set; }
-        public virtual DbSet<TDestinationType> TDestinationTypes { get; set; }
-        public virtual DbSet<TDocument> TDocuments { get; set; }
-        public virtual DbSet<TDocumentType> TDocumentTypes { get; set; }
-        public virtual DbSet<TGrade> TGrades { get; set; }
-        public virtual DbSet<TListValue> TListValues { get; set; }
-        public virtual DbSet<TMessage> TMessages { get; set; }
-        public virtual DbSet<TParameter> TParameters { get; set; }
-        public virtual DbSet<TPermission> TPermissions { get; set; }
-        public virtual DbSet<TProfession> TProfessions { get; set; }
-        public virtual DbSet<TProject> TProjects { get; set; }
-        public virtual DbSet<TSchool> TSchools { get; set; }
-        public virtual DbSet<TStatu> TStatus { get; set; }
-        public virtual DbSet<TStudent> TStudents { get; set; }
-        public virtual DbSet<TUser> TUsers { get; set; }
-        public virtual DbSet<projects_students> projects_students { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TAssistant> TAssistant { get; set; }
+        public virtual DbSet<TAssistantHours> TAssistantHours { get; set; }
+        public virtual DbSet<TAssistantToProject> TAssistantToProject { get; set; }
+        public virtual DbSet<TAssToManager> TAssToManager { get; set; }
+        public virtual DbSet<TDestinationGroup> TDestinationGroup { get; set; }
+        public virtual DbSet<TDestinationType> TDestinationType { get; set; }
+        public virtual DbSet<TDocument> TDocument { get; set; }
+        public virtual DbSet<TDocumentType> TDocumentType { get; set; }
+        public virtual DbSet<TGrade> TGrade { get; set; }
+        public virtual DbSet<TMessage> TMessage { get; set; }
+        public virtual DbSet<TPermission> TPermission { get; set; }
+        public virtual DbSet<TProject> TProject { get; set; }
+        public virtual DbSet<TSchool> TSchool { get; set; }
+        public virtual DbSet<TStatus> TStatus { get; set; }
+        public virtual DbSet<TStudent> TStudent { get; set; }
+        public virtual DbSet<TTechnology> TTechnology { get; set; }
+        public virtual DbSet<TTechnologyToAss> TTechnologyToAss { get; set; }
+        public virtual DbSet<TUser> TUser { get; set; }
+    
+        public virtual ObjectResult<ass_by_manager_Result> ass_by_manager(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ass_by_manager_Result>("ass_by_manager", idParameter);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BL;
+using DAL.FolderDAL;
 using DTO.tables;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,17 @@ namespace API.Controllers
         {
             return new AssistantBL().GetAssistantById(id);
         }
-        
+        // GET api/Assistant
+        [HttpGet]
+        public IEnumerable<ass_by_manager_ResultDTO> GetByManger(int id)
+        {
+            return new AssistantBL().GetAssistantByManger(id);
+        }
+        public IEnumerable<ruyhyDTO> GetByManger1(int id)
+        {
+            return new AssistantBL().GetAssistantByManger1(id);
+        }
+
         //POST api/values
         public void Post([FromBody] TAssistantDTO value)
         {

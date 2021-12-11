@@ -44,22 +44,26 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tables\ass_by_manager_ResultDTO.cs" />
+    <Compile Include="tables\MailDTO.cs" />
+    <Compile Include="tables\ruyhyDTO.cs" />
     <Compile Include="tables\TAssistantHoursDTO.cs" />
     <Compile Include="tables\TAssistantDTO.cs" />
     <Compile Include="tables\TAssistantToProjectDTO.cs" />
+    <Compile Include="tables\TAssToManagerDTO.cs" />
     <Compile Include="tables\TDestinationGroupDTO.cs" />
     <Compile Include="tables\TDestinationTypeDTO.cs" />
     <Compile Include="tables\TDocumentDTO.cs" />
     <Compile Include="tables\TDocumentTypeDTO.cs" />
     <Compile Include="tables\TGradeDTO.cs" />
-    <Compile Include="tables\TListValuesDTO.cs" />
-    <Compile Include="tables\TNoteDTO.cs" />
-    <Compile Include="tables\TParameterDTO.cs" />
-    <Compile Include="tables\TProfessionDTO.cs" />
+    <Compile Include="tables\TMessageDTO.cs" />
+    <Compile Include="tables\TPermissionDTO.cs" />
     <Compile Include="tables\TProjectDTO.cs" />
     <Compile Include="tables\TSchoolDTO.cs" />
     <Compile Include="tables\TStatusDTO.cs" />
     <Compile Include="tables\TStudentDTO.cs" />
+    <Compile Include="tables\TTechnologyDTO.cs" />
+    <Compile Include="tables\TTechnologyToAssDTO.cs" />
     <Compile Include="tables\TUserDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -76,3 +76,28 @@ E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalPro
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\DAL\obj\Debug\DAL.dll
 E:\תקיות משתמש\Desktop\מחובר עובד פרויקט\‏‏FinalProject - עותק\DAL\obj\Debug\DAL.pdb
+F:\user\Documents\GitHub\end-project\server\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\user\Documents\GitHub\end-project\server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\user\Documents\GitHub\end-project\server\DAL\obj\Debug\DAL.dll
+F:\user\Documents\GitHub\end-project\server\DAL\obj\Debug\DAL.pdb
+F:\user\Documents\GitHub\end-project\server\DAL\bin\Debug\DAL.dll.config
+F:\user\Documents\GitHub\end-project\server\DAL\bin\Debug\DAL.dll
+F:\user\Documents\GitHub\end-project\server\DAL\bin\Debug\DAL.pdb
+F:\user\Documents\GitHub\end-project\server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\user\Documents\GitHub\end-project\server\DAL\bin\Debug\EntityFramework.dll
+F:\user\Documents\GitHub\end-project\server\DAL\bin\Debug\DTO.dll
+F:\user\Documents\GitHub\end-project\server\DAL\bin\Debug\DTO.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\DAL.dll.config
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\DAL.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\DAL.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\DTO.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\EntityFramework.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\DTO.pdb
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\EntityFramework.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\obj\Debug\DAL.dll
+E:\תקיות משתמש\Desktop\פרויקט גמר-חודש כסליו\טבת\חדש\server\DAL\obj\Debug\DAL.pdb

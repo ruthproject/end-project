@@ -14,5 +14,8 @@ namespace DTO.tables
         public Nullable<System.DateTime> DateSubmission { get; set; }
         public Nullable<bool> IsApprove { get; set; }
 
+        //public virtual TDocumentTypeDTO TDocumentType { get; set; }
+        //public virtual TProjectDTO TProject { get; set; }
+
     }
 }
