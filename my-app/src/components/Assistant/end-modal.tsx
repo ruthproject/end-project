@@ -58,7 +58,7 @@ export default function BasicModal({ open, setOpen, currentAssistantId, startHou
               onChange={updatePercentage}
               value={valuePercentage.percentage}
             />
-            <button onClick={submitEnd}>ok</button>
+            <button onClick={submitEnd}>ok!</button>
 
           </Typography>
 
